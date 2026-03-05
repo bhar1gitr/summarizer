@@ -1,0 +1,132 @@
+[
+  {
+    "user": "Admin",
+    "color": "#3498db",
+    "event": "CHANGE",
+    "file": "server.js",
+    "xp": 107,
+    "lines": 530,
+    "timestamp": "2026-03-05T09:48:17.895Z",
+    "diff": "// import express from \"express\";\r\n// import fs from \"fs/promises\";\r\n// import { existsSync, writeFileSync } from \"fs\";\r\n\r\n// const app = express();\r\n// const LOG_FILE = \".shadow-trace.json\";\r\n\r\n// if (!existsSync(LOG_FILE)) writeFileSync(LOG_FILE, JSON.stringify([]));\r\n\r\n// app.use(express.json());\r\n\r\n// app.post(\"/update\", async (req, res) => {\r\n//     try {\r\n//         const { user, xp, color } = req.body;\r\n//         if (!user || typeof user !== 'string') return res.status(400).send(\"Invalid User\");\r\n        \r\n//         const data = await fs.readFile(LOG_FILE, \"utf-8\");\r\n//         const logs = JSON.parse(data);\r\n\r\n//         const newEntry = {\r\n//             user: user.substring(0, 20),\r\n//             xp: Number(xp) || 0,\r\n//             color: /^#[0-9A-F]{6}$/i.test(color) ? color"
+  },
+  {
+    "user": "Admin",
+    "color": "#3498db",
+    "event": "CHANGE",
+    "file": "server.js",
+    "xp": 87,
+    "lines": 433,
+    "timestamp": "2026-03-05T09:47:12.638Z",
+    "diff": "// import express from \"express\";\r\n// import fs from \"fs/promises\";\r\n// import { existsSync, writeFileSync } from \"fs\";\r\n\r\n// const app = express();\r\n// const LOG_FILE = \".shadow-trace.json\";\r\n\r\n// if (!existsSync(LOG_FILE)) writeFileSync(LOG_FILE, JSON.stringify([]));\r\n\r\n// app.use(express.json());\r\n\r\n// app.post(\"/update\", async (req, res) => {\r\n//     try {\r\n//         const { user, xp, color } = req.body;\r\n//         if (!user || typeof user !== 'string') return res.status(400).send(\"Invalid User\");\r\n        \r\n//         const data = await fs.readFile(LOG_FILE, \"utf-8\");\r\n//         const logs = JSON.parse(data);\r\n\r\n//         const newEntry = {\r\n//             user: user.substring(0, 20),\r\n//             xp: Number(xp) || 0,\r\n//             color: /^#[0-9A-F]{6}$/i.test(color) ? color"
+  },
+  {
+    "user": "Admin",
+    "color": "#3498db",
+    "event": "CHANGE",
+    "file": "server.js",
+    "xp": 91,
+    "lines": 453,
+    "timestamp": "2026-03-05T09:47:09.296Z",
+    "diff": "// import express from \"express\";\r\n// import fs from \"fs/promises\";\r\n// import { existsSync, writeFileSync } from \"fs\";\r\n\r\n// const app = express();\r\n// const LOG_FILE = \".shadow-trace.json\";\r\n\r\n// if (!existsSync(LOG_FILE)) writeFileSync(LOG_FILE, JSON.stringify([]));\r\n\r\n// app.use(express.json());\r\n\r\n// app.post(\"/update\", async (req, res) => {\r\n//     try {\r\n//         const { user, xp, color } = req.body;\r\n//         if (!user || typeof user !== 'string') return res.status(400).send(\"Invalid User\");\r\n        \r\n//         const data = await fs.readFile(LOG_FILE, \"utf-8\");\r\n//         const logs = JSON.parse(data);\r\n\r\n//         const newEntry = {\r\n//             user: user.substring(0, 20),\r\n//             xp: Number(xp) || 0,\r\n//             color: /^#[0-9A-F]{6}$/i.test(color) ? color"
+  },
+  {
+    "user": "Admin",
+    "color": "#3498db",
+    "event": "CHANGE",
+    "file": "server.js",
+    "xp": 99,
+    "lines": 492,
+    "timestamp": "2026-03-05T09:46:39.047Z",
+    "diff": "// import express from \"express\";\r\n// import fs from \"fs/promises\";\r\n// import { existsSync, writeFileSync } from \"fs\";\r\n\r\n// const app = express();\r\n// const LOG_FILE = \".shadow-trace.json\";\r\n\r\n// if (!existsSync(LOG_FILE)) writeFileSync(LOG_FILE, JSON.stringify([]));\r\n\r\n// app.use(express.json());\r\n\r\n// app.post(\"/update\", async (req, res) => {\r\n//     try {\r\n//         const { user, xp, color } = req.body;\r\n//         if (!user || typeof user !== 'string') return res.status(400).send(\"Invalid User\");\r\n        \r\n//         const data = await fs.readFile(LOG_FILE, \"utf-8\");\r\n//         const logs = JSON.parse(data);\r\n\r\n//         const newEntry = {\r\n//             user: user.substring(0, 20),\r\n//             xp: Number(xp) || 0,\r\n//             color: /^#[0-9A-F]{6}$/i.test(color) ? color"
+  },
+  {
+    "user": "Admin",
+    "color": "#3498db",
+    "event": "CHANGE",
+    "file": "package-lock.json",
+    "xp": 1,
+    "lines": 1,
+    "timestamp": "2026-03-05T09:45:33.358Z",
+    "diff": ""
+  },
+  {
+    "user": "Admin",
+    "color": "#3498db",
+    "event": "CHANGE",
+    "file": "package-lock.json",
+    "xp": 268,
+    "lines": 1336,
+    "timestamp": "2026-03-05T09:45:30.086Z",
+    "diff": "{\r\n  \"name\": \"shadow-docs\",\r\n  \"version\": \"1.0.0\",\r\n  \"lockfileVersion\": 3,\r\n  \"requires\": true,\r\n  \"packages\": {\r\n    \"\": {\r\n      \"name\": \"shadow-docs\",\r\n      \"version\": \"1.0.0\",\r\n      \"license\": \"ISC\",\r\n      \"dependencies\": {\r\n        \"axios\": \"^1.13.6\",\r\n        \"chokidar\": \"^4.0.0\",\r\n        \"express\": \"^5.2.1\",\r\n        \"nodemon\": \"^3.1.14\",\r\n        \"simple-git\": \"^3.32.3\"\r\n      }\r\n    },\r\n    \"node_modules/@kwsites/file-exists\": {\r\n      \"version\": \"1.1.1\",\r\n      \"resolved\": \"https://registry.npmjs.org/@kwsites/file-exists/-/file-exists-1.1.1.tgz\",\r\n      \"integrity\": \"sha512-m9/5YGR18lIwxSFDwfE3oA7bWuq9kdau6ugN4H2rJeyhFQZcG9AgSHkQtSD15a8WvTgfz9aikZMrKPHvbpqFiw==\",\r\n      \"dependencies\": {\r\n        \"debug\": \"^4.1.1\"\r\n      }\r\n    },\r\n    \"node_modules/@kwsites/promise-deferred"
+  },
+  {
+    "user": "Admin",
+    "color": "#3498db",
+    "event": "CHANGE",
+    "file": "package.json",
+    "xp": 5,
+    "lines": 21,
+    "timestamp": "2026-03-05T09:45:30.058Z",
+    "diff": "{\r\n  \"name\": \"shadow-docs\",\r\n  \"version\": \"1.0.0\",\r\n  \"type\": \"module\",\r\n  \"main\": \"index.js\",\r\n  \"scripts\": {\r\n    \"test\": \"echo \\\"Error: no test specified\\\" && exit 1\"\r\n  },\r\n  \"keywords\": [],\r\n  \"author\": \"\",\r\n  \"license\": \"ISC\",\r\n  \"description\": \"\",\r\n  \"dependencies\": {\r\n    \"axios\": \"^1.13.6\",\r\n    \"chokidar\": \"^4.0.0\",\r\n    \"express\": \"^5.2.1\",\r\n    \"nodemon\": \"^3.1.14\",\r\n    \"simple-git\": \"^3.32.3\"\r\n  }\r\n}\r\n"
+  },
+  {
+    "user": "Admin",
+    "color": "#3498db",
+    "event": "CHANGE",
+    "file": "server.js",
+    "xp": 91,
+    "lines": 453,
+    "timestamp": "2026-03-05T09:45:05.465Z",
+    "diff": "// import express from \"express\";\r\n// import fs from \"fs/promises\";\r\n// import { existsSync, writeFileSync } from \"fs\";\r\n\r\n// const app = express();\r\n// const LOG_FILE = \".shadow-trace.json\";\r\n\r\n// if (!existsSync(LOG_FILE)) writeFileSync(LOG_FILE, JSON.stringify([]));\r\n\r\n// app.use(express.json());\r\n\r\n// app.post(\"/update\", async (req, res) => {\r\n//     try {\r\n//         const { user, xp, color } = req.body;\r\n//         if (!user || typeof user !== 'string') return res.status(400).send(\"Invalid User\");\r\n        \r\n//         const data = await fs.readFile(LOG_FILE, \"utf-8\");\r\n//         const logs = JSON.parse(data);\r\n\r\n//         const newEntry = {\r\n//             user: user.substring(0, 20),\r\n//             xp: Number(xp) || 0,\r\n//             color: /^#[0-9A-F]{6}$/i.test(color) ? color"
+  },
+  {
+    "user": "Admin",
+    "color": "#3498db",
+    "event": "CHANGE",
+    "file": "server.js",
+    "xp": 91,
+    "lines": 453,
+    "timestamp": "2026-03-05T09:45:04.077Z",
+    "diff": "// import express from \"express\";\r\n// import fs from \"fs/promises\";\r\n// import { existsSync, writeFileSync } from \"fs\";\r\n\r\n// const app = express();\r\n// const LOG_FILE = \".shadow-trace.json\";\r\n\r\n// if (!existsSync(LOG_FILE)) writeFileSync(LOG_FILE, JSON.stringify([]));\r\n\r\n// app.use(express.json());\r\n\r\n// app.post(\"/update\", async (req, res) => {\r\n//     try {\r\n//         const { user, xp, color } = req.body;\r\n//         if (!user || typeof user !== 'string') return res.status(400).send(\"Invalid User\");\r\n        \r\n//         const data = await fs.readFile(LOG_FILE, \"utf-8\");\r\n//         const logs = JSON.parse(data);\r\n\r\n//         const newEntry = {\r\n//             user: user.substring(0, 20),\r\n//             xp: Number(xp) || 0,\r\n//             color: /^#[0-9A-F]{6}$/i.test(color) ? color"
+  },
+  {
+    "user": "Admin",
+    "color": "#3498db",
+    "event": "CHANGE",
+    "file": "server.js",
+    "xp": 91,
+    "lines": 453,
+    "timestamp": "2026-03-05T09:44:59.288Z",
+    "diff": "// import express from \"express\";\r\n// import fs from \"fs/promises\";\r\n// import { existsSync, writeFileSync } from \"fs\";\r\n\r\n// const app = express();\r\n// const LOG_FILE = \".shadow-trace.json\";\r\n\r\n// if (!existsSync(LOG_FILE)) writeFileSync(LOG_FILE, JSON.stringify([]));\r\n\r\n// app.use(express.json());\r\n\r\n// app.post(\"/update\", async (req, res) => {\r\n//     try {\r\n//         const { user, xp, color } = req.body;\r\n//         if (!user || typeof user !== 'string') return res.status(400).send(\"Invalid User\");\r\n        \r\n//         const data = await fs.readFile(LOG_FILE, \"utf-8\");\r\n//         const logs = JSON.parse(data);\r\n\r\n//         const newEntry = {\r\n//             user: user.substring(0, 20),\r\n//             xp: Number(xp) || 0,\r\n//             color: /^#[0-9A-F]{6}$/i.test(color) ? color"
+  },
+  {
+    "user": "Admin",
+    "color": "#3498db",
+    "event": "CHANGE",
+    "file": "server.js",
+    "xp": 59,
+    "lines": 291,
+    "timestamp": "2026-03-05T09:44:48.827Z",
+    "diff": "// import express from \"express\";\r\n// import fs from \"fs/promises\";\r\n// import { existsSync, writeFileSync } from \"fs\";\r\n\r\n// const app = express();\r\n// const LOG_FILE = \".shadow-trace.json\";\r\n\r\n// if (!existsSync(LOG_FILE)) writeFileSync(LOG_FILE, JSON.stringify([]));\r\n\r\n// app.use(express.json());\r\n\r\n// app.post(\"/update\", async (req, res) => {\r\n//     try {\r\n//         const { user, xp, color } = req.body;\r\n//         if (!user || typeof user !== 'string') return res.status(400).send(\"Invalid User\");\r\n        \r\n//         const data = await fs.readFile(LOG_FILE, \"utf-8\");\r\n//         const logs = JSON.parse(data);\r\n\r\n//         const newEntry = {\r\n//             user: user.substring(0, 20),\r\n//             xp: Number(xp) || 0,\r\n//             color: /^#[0-9A-F]{6}$/i.test(color) ? color"
+  },
+  {
+    "user": "Admin",
+    "color": "#3498db",
+    "event": "CHANGE",
+    "file": "server.js",
+    "xp": 55,
+    "lines": 272,
+    "timestamp": "2026-03-05T09:44:44.966Z",
+    "diff": "// import express from \"express\";\r\n// import fs from \"fs/promises\";\r\n// import { existsSync, writeFileSync } from \"fs\";\r\n\r\n// const app = express();\r\n// const LOG_FILE = \".shadow-trace.json\";\r\n\r\n// if (!existsSync(LOG_FILE)) writeFileSync(LOG_FILE, JSON.stringify([]));\r\n\r\n// app.use(express.json());\r\n\r\n// app.post(\"/update\", async (req, res) => {\r\n//     try {\r\n//         const { user, xp, color } = req.body;\r\n//         if (!user || typeof user !== 'string') return res.status(400).send(\"Invalid User\");\r\n        \r\n//         const data = await fs.readFile(LOG_FILE, \"utf-8\");\r\n//         const logs = JSON.parse(data);\r\n\r\n//         const newEntry = {\r\n//             user: user.substring(0, 20),\r\n//             xp: Number(xp) || 0,\r\n//             color: /^#[0-9A-F]{6}$/i.test(color) ? color"
+  },
+  {
+    "user": "Admin",
+    "color": "#3498db",
+    "event": "CHANGE",
+    "file": "server.js",
+    "xp": 36,
+    "lines": 176,
+    "timestamp": "2026-03-05T08:10:01.180Z",
+    "diff": "import express from 'express';\r\nimport fs from 'fs';\r\nimport path from 'path';\r\n\r\nconst app = express();\r\nconst LOG_FILE = '.shadow-trace.json';\r\n\r\nif (!fs.existsSync(LOG_FILE)) fs.writeFileSync(LOG_FILE, JSON.stringify([]));\r\napp.use(express.json());\r\n\r\napp.post('/update', (req, res) => {\r\n    try {\r\n        const logs = JSON.parse(fs.readFileSync(LOG_FILE, 'utf8') || '[]');\r\n        logs.unshift(req.body);\r\n        fs.writeFileSync(LOG_FILE, JSON.stringify(logs.slice(0, 1000), null, 2)); \r\n        res.sendStatus(200);\r\n    } catch (e) { res.status(500).send(\"Error\"); }\r\n});\r\n\r\napp.get('/', (req, res) => {\r\n    let logs = [];\r\n    try {\r\n        logs = JSON.parse(fs.readFileSync(LOG_FILE, 'utf8') || '[]');\r\n    } catch (e) { logs = []; }\r\n    \r\n    const scores = logs.reduce((acc, l) => {"
+  }
+]
