@@ -3,6 +3,666 @@
     "user": "Admin",
     "color": "#3498db",
     "event": "CHANGE",
+    "file": "public\\index.html",
+    "xp": 6,
+    "lines": 26,
+    "timestamp": "2026-03-05T10:20:19.171Z",
+    "diff": "<!DOCTYPE html>\r\n<html>\r\n<head>\r\n    <title>Primeval 3D | @bhar1itr</title>\r\n    <style>\r\n        body { margin: 0; overflow: hidden; background: #111; font-family: sans-serif; }\r\n        #hud { position: absolute; top: 20px; left: 20px; color: white; pointer-events: none; z-index: 100; }\r\n        #count { color: #00ffcc; font-weight: bold; }\r\n    </style>\r\n</head>\r\n<body>\r\n    <div id=\"hud\">\r\n        <h1>@bhar1itr</h1>\r\n        <div id=\"count\">Connecting to GitHub...</div>\r\n    </div>\r\n    <script type=\"importmap\">\r\n    {\r\n        \"imports\": {\r\n            \"three\": \"https://unpkg.com/three@0.160.0/build/three.module.js\",\r\n            \"three/addons/\": \"https://unpkg.com/three@0.160.0/examples/jsm/\"\r\n        }\r\n    }\r\n    </script>\r\n    <script type=\"module\" src=\"app.js\"></script>\r\n</body>\r"
+  },
+  {
+    "user": "Admin",
+    "color": "#3498db",
+    "event": "ADD",
+    "file": "public\\models\\mount.blend1.obj",
+    "xp": 2140,
+    "lines": 10696,
+    "timestamp": "2026-03-05T10:20:06.710Z",
+    "diff": "# Blender v2.70 (sub 0) OBJ File: 'mount.blend1.blend'\n# www.blender.org\nmtllib mount.blend1.mtl\no Plane\nv -16.548750 -0.206907 9.209969\nv 8.962208 -0.206907 9.209969\nv -16.548750 -0.206907 -16.300989\nv 8.962208 -0.206907 -16.300989\nusemtl Material\ns off\nf 1 2 4 3\no Landscape\nv -3.230412 0.000213 4.191674\nv -3.230409 0.000042 4.049577\nv -3.230408 0.000000 3.907485\nv -3.230408 0.000000 3.765394\nv -3.230408 0.000000 3.623304\nv -3.230408 0.000000 3.481214\nv -3.230408 0.000000 3.339123\nv -3.230408 0.000000 3.197033\nv -3.230408 0.000000 3.054942\nv -3.230408 0.000000 2.912852\nv -3.230408 0.000000 2.770762\nv -3.230408 0.000000 2.628671\nv -3.230408 0.000000 2.486581\nv -3.230408 0.000000 2.344491\nv -3.230408 0.000000 2.202400\nv -3.230408 0.000000 2.060310\nv -3.230408 0.000000 1.918220\nv -3.230408 0"
+  },
+  {
+    "user": "Admin",
+    "color": "#3498db",
+    "event": "ADD",
+    "file": "public\\models\\mount.blend1.mtl",
+    "xp": 5,
+    "lines": 22,
+    "timestamp": "2026-03-05T10:20:06.111Z",
+    "diff": "# Blender MTL File: 'mount.blend1.blend'\n# Material Count: 2\n\nnewmtl Material\nNs 96.078431\nKa 0.000000 0.000000 0.000000\nKd 0.050977 0.050977 0.050977\nKs 0.001641 0.001641 0.001641\nNi 1.000000\nd 1.000000\nillum 2\n\nnewmtl Material.001\nNs 96.078431\nKa 0.000000 0.000000 0.000000\nKd 0.640000 0.640000 0.640000\nKs 0.000000 0.000000 0.000000\nNi 1.000000\nd 1.000000\nillum 1\nmap_Kd D:\\Soft\\blender-2.70a-windows32\\FILES\\Textures\\Ground\\GRASS\\ground_grass_3264_4062_Small.jpg\n"
+  },
+  {
+    "user": "Admin",
+    "color": "#3498db",
+    "event": "CHANGE",
+    "file": "public\\app.js",
+    "xp": 21,
+    "lines": 104,
+    "timestamp": "2026-03-05T10:19:58.746Z",
+    "diff": "import * as THREE from \"three\";\r\nimport { OrbitControls } from \"three/addons/controls/OrbitControls.js\";\r\nimport { OBJLoader } from \"three/addons/loaders/OBJLoader.js\";\r\nimport { MTLLoader } from \"three/addons/loaders/MTLLoader.js\";\r\n\r\nconst scene = new THREE.Scene();\r\n// Using a slightly lighter background to distinguish unlit objects from empty space\r\nscene.background = new THREE.Color(0x111111); \r\nscene.fog = new THREE.FogExp2(0x111111, 0.0005);\r\n\r\nconst camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 1, 10000);\r\n// Pull camera back significantly to see the whole biome\r\ncamera.position.set(1200, 800, 1500); \r\n\r\nconst renderer = new THREE.WebGLRenderer({ antialias: true });\r\nrenderer.setSize(window.innerWidth, window.innerHeight);\r\nrenderer.toneMapping = "
+  },
+  {
+    "user": "Admin",
+    "color": "#3498db",
+    "event": "CHANGE",
+    "file": "server.js",
+    "xp": 69,
+    "lines": 340,
+    "timestamp": "2026-03-05T10:19:52.148Z",
+    "diff": "// import express from \"express\";\r\n// import fs from \"fs/promises\";\r\n// import { existsSync, writeFileSync } from \"fs\";\r\n\r\n// const app = express();\r\n// const LOG_FILE = \".shadow-trace.json\";\r\n\r\n// if (!existsSync(LOG_FILE)) writeFileSync(LOG_FILE, JSON.stringify([]));\r\n\r\n// app.use(express.json());\r\n\r\n// app.post(\"/update\", async (req, res) => {\r\n//     try {\r\n//         const { user, xp, color } = req.body;\r\n//         if (!user || typeof user !== 'string') return res.status(400).send(\"Invalid User\");\r\n        \r\n//         const data = await fs.readFile(LOG_FILE, \"utf-8\");\r\n//         const logs = JSON.parse(data);\r\n\r\n//         const newEntry = {\r\n//             user: user.substring(0, 20),\r\n//             xp: Number(xp) || 0,\r\n//             color: /^#[0-9A-F]{6}$/i.test(color) ? color"
+  },
+  {
+    "user": "Admin",
+    "color": "#3498db",
+    "event": "ADD",
+    "file": "public\\models\\mount.mtl",
+    "xp": 5,
+    "lines": 22,
+    "timestamp": "2026-03-05T10:19:02.437Z",
+    "diff": "# Blender MTL File: 'mount.blend1.blend'\n# Material Count: 2\n\nnewmtl Material\nNs 96.078431\nKa 0.000000 0.000000 0.000000\nKd 0.050977 0.050977 0.050977\nKs 0.001641 0.001641 0.001641\nNi 1.000000\nd 1.000000\nillum 2\n\nnewmtl Material.001\nNs 96.078431\nKa 0.000000 0.000000 0.000000\nKd 0.640000 0.640000 0.640000\nKs 0.000000 0.000000 0.000000\nNi 1.000000\nd 1.000000\nillum 1\nmap_Kd D:\\Soft\\blender-2.70a-windows32\\FILES\\Textures\\Ground\\GRASS\\ground_grass_3264_4062_Small.jpg\n"
+  },
+  {
+    "user": "Admin",
+    "color": "#3498db",
+    "event": "ADD",
+    "file": "public\\models\\mount.obj",
+    "xp": 2140,
+    "lines": 10696,
+    "timestamp": "2026-03-05T10:18:57.695Z",
+    "diff": "# Blender v2.70 (sub 0) OBJ File: 'mount.blend1.blend'\n# www.blender.org\nmtllib mount.blend1.mtl\no Plane\nv -16.548750 -0.206907 9.209969\nv 8.962208 -0.206907 9.209969\nv -16.548750 -0.206907 -16.300989\nv 8.962208 -0.206907 -16.300989\nusemtl Material\ns off\nf 1 2 4 3\no Landscape\nv -3.230412 0.000213 4.191674\nv -3.230409 0.000042 4.049577\nv -3.230408 0.000000 3.907485\nv -3.230408 0.000000 3.765394\nv -3.230408 0.000000 3.623304\nv -3.230408 0.000000 3.481214\nv -3.230408 0.000000 3.339123\nv -3.230408 0.000000 3.197033\nv -3.230408 0.000000 3.054942\nv -3.230408 0.000000 2.912852\nv -3.230408 0.000000 2.770762\nv -3.230408 0.000000 2.628671\nv -3.230408 0.000000 2.486581\nv -3.230408 0.000000 2.344491\nv -3.230408 0.000000 2.202400\nv -3.230408 0.000000 2.060310\nv -3.230408 0.000000 1.918220\nv -3.230408 0"
+  },
+  {
+    "user": "Admin",
+    "color": "#3498db",
+    "event": "CHANGE",
+    "file": "public\\app.js",
+    "xp": 37,
+    "lines": 181,
+    "timestamp": "2026-03-05T10:18:52.850Z",
+    "diff": "import * as THREE from \"three\";\r\nimport { OrbitControls } from \"three/addons/controls/OrbitControls.js\";\r\nimport { OBJLoader } from \"three/addons/loaders/OBJLoader.js\";\r\nimport { MTLLoader } from \"three/addons/loaders/MTLLoader.js\";\r\n\r\nconst scene = new THREE.Scene();\r\nscene.background = new THREE.Color(0x111111);\r\n\r\nconst camera = new THREE.PerspectiveCamera(\r\n60,\r\nwindow.innerWidth/window.innerHeight,\r\n0.1,\r\n10000\r\n);\r\n\r\ncamera.position.set(600,400,800);\r\n\r\nconst renderer = new THREE.WebGLRenderer({antialias:true});\r\nrenderer.setSize(window.innerWidth,window.innerHeight);\r\n\r\ndocument.body.appendChild(renderer.domElement);\r\n\r\nconst controls = new OrbitControls(camera,renderer.domElement);\r\ncontrols.enableDamping=true;\r\n\r\nscene.add(new THREE.AmbientLight(0xffffff,1));\r\n\r\nconst sun = new TH"
+  },
+  {
+    "user": "Admin",
+    "color": "#3498db",
+    "event": "CHANGE",
+    "file": "public\\app.js",
+    "xp": 37,
+    "lines": 181,
+    "timestamp": "2026-03-05T10:18:50.398Z",
+    "diff": "import * as THREE from \"three\";\r\nimport { OrbitControls } from \"three/addons/controls/OrbitControls.js\";\r\nimport { OBJLoader } from \"three/addons/loaders/OBJLoader.js\";\r\nimport { MTLLoader } from \"three/addons/loaders/MTLLoader.js\";\r\n\r\nconst scene = new THREE.Scene();\r\nscene.background = new THREE.Color(0x111111);\r\n\r\nconst camera = new THREE.PerspectiveCamera(\r\n60,\r\nwindow.innerWidth/window.innerHeight,\r\n0.1,\r\n10000\r\n);\r\n\r\ncamera.position.set(600,400,800);\r\n\r\nconst renderer = new THREE.WebGLRenderer({antialias:true});\r\nrenderer.setSize(window.innerWidth,window.innerHeight);\r\n\r\ndocument.body.appendChild(renderer.domElement);\r\n\r\nconst controls = new OrbitControls(camera,renderer.domElement);\r\ncontrols.enableDamping=true;\r\n\r\nscene.add(new THREE.AmbientLight(0xffffff,1));\r\n\r\nconst sun = new TH"
+  },
+  {
+    "user": "Admin",
+    "color": "#3498db",
+    "event": "CHANGE",
+    "file": "public\\app.js",
+    "xp": 37,
+    "lines": 181,
+    "timestamp": "2026-03-05T10:18:29.702Z",
+    "diff": "import * as THREE from \"three\";\r\nimport { OrbitControls } from \"three/addons/controls/OrbitControls.js\";\r\nimport { OBJLoader } from \"three/addons/loaders/OBJLoader.js\";\r\nimport { MTLLoader } from \"three/addons/loaders/MTLLoader.js\";\r\n\r\nconst scene = new THREE.Scene();\r\nscene.background = new THREE.Color(0x111111);\r\n\r\nconst camera = new THREE.PerspectiveCamera(\r\n60,\r\nwindow.innerWidth/window.innerHeight,\r\n0.1,\r\n10000\r\n);\r\n\r\ncamera.position.set(600,400,800);\r\n\r\nconst renderer = new THREE.WebGLRenderer({antialias:true});\r\nrenderer.setSize(window.innerWidth,window.innerHeight);\r\n\r\ndocument.body.appendChild(renderer.domElement);\r\n\r\nconst controls = new OrbitControls(camera,renderer.domElement);\r\ncontrols.enableDamping=true;\r\n\r\nscene.add(new THREE.AmbientLight(0xffffff,1));\r\n\r\nconst sun = new TH"
+  },
+  {
+    "user": "Admin",
+    "color": "#3498db",
+    "event": "CHANGE",
+    "file": "public\\app.js",
+    "xp": 37,
+    "lines": 181,
+    "timestamp": "2026-03-05T10:18:20.235Z",
+    "diff": "import * as THREE from \"three\";\r\nimport { OrbitControls } from \"three/addons/controls/OrbitControls.js\";\r\nimport { OBJLoader } from \"three/addons/loaders/OBJLoader.js\";\r\nimport { MTLLoader } from \"three/addons/loaders/MTLLoader.js\";\r\n\r\nconst scene = new THREE.Scene();\r\nscene.background = new THREE.Color(0x111111);\r\n\r\nconst camera = new THREE.PerspectiveCamera(\r\n60,\r\nwindow.innerWidth/window.innerHeight,\r\n0.1,\r\n10000\r\n);\r\n\r\ncamera.position.set(600,400,800);\r\n\r\nconst renderer = new THREE.WebGLRenderer({antialias:true});\r\nrenderer.setSize(window.innerWidth,window.innerHeight);\r\n\r\ndocument.body.appendChild(renderer.domElement);\r\n\r\nconst controls = new OrbitControls(camera,renderer.domElement);\r\ncontrols.enableDamping=true;\r\n\r\nscene.add(new THREE.AmbientLight(0xffffff,1));\r\n\r\nconst sun = new TH"
+  },
+  {
+    "user": "Admin",
+    "color": "#3498db",
+    "event": "CHANGE",
+    "file": "public\\app.js",
+    "xp": 37,
+    "lines": 181,
+    "timestamp": "2026-03-05T10:18:16.299Z",
+    "diff": "import * as THREE from \"three\";\r\nimport { OrbitControls } from \"three/addons/controls/OrbitControls.js\";\r\nimport { OBJLoader } from \"three/addons/loaders/OBJLoader.js\";\r\nimport { MTLLoader } from \"three/addons/loaders/MTLLoader.js\";\r\n\r\nconst scene = new THREE.Scene();\r\nscene.background = new THREE.Color(0x111111);\r\n\r\nconst camera = new THREE.PerspectiveCamera(\r\n60,\r\nwindow.innerWidth/window.innerHeight,\r\n0.1,\r\n10000\r\n);\r\n\r\ncamera.position.set(600,400,800);\r\n\r\nconst renderer = new THREE.WebGLRenderer({antialias:true});\r\nrenderer.setSize(window.innerWidth,window.innerHeight);\r\n\r\ndocument.body.appendChild(renderer.domElement);\r\n\r\nconst controls = new OrbitControls(camera,renderer.domElement);\r\ncontrols.enableDamping=true;\r\n\r\nscene.add(new THREE.AmbientLight(0xffffff,1));\r\n\r\nconst sun = new TH"
+  },
+  {
+    "user": "Admin",
+    "color": "#3498db",
+    "event": "CHANGE",
+    "file": "public\\app.js",
+    "xp": 37,
+    "lines": 181,
+    "timestamp": "2026-03-05T10:18:14.055Z",
+    "diff": "import * as THREE from \"three\";\r\nimport { OrbitControls } from \"three/addons/controls/OrbitControls.js\";\r\nimport { OBJLoader } from \"three/addons/loaders/OBJLoader.js\";\r\nimport { MTLLoader } from \"three/addons/loaders/MTLLoader.js\";\r\n\r\nconst scene = new THREE.Scene();\r\nscene.background = new THREE.Color(0x111111);\r\n\r\nconst camera = new THREE.PerspectiveCamera(\r\n60,\r\nwindow.innerWidth/window.innerHeight,\r\n0.1,\r\n10000\r\n);\r\n\r\ncamera.position.set(600,400,800);\r\n\r\nconst renderer = new THREE.WebGLRenderer({antialias:true});\r\nrenderer.setSize(window.innerWidth,window.innerHeight);\r\n\r\ndocument.body.appendChild(renderer.domElement);\r\n\r\nconst controls = new OrbitControls(camera,renderer.domElement);\r\ncontrols.enableDamping=true;\r\n\r\nscene.add(new THREE.AmbientLight(0xffffff,1));\r\n\r\nconst sun = new TH"
+  },
+  {
+    "user": "Admin",
+    "color": "#3498db",
+    "event": "CHANGE",
+    "file": "public\\app.js",
+    "xp": 37,
+    "lines": 181,
+    "timestamp": "2026-03-05T10:18:12.552Z",
+    "diff": "import * as THREE from \"three\";\r\nimport { OrbitControls } from \"three/addons/controls/OrbitControls.js\";\r\nimport { OBJLoader } from \"three/addons/loaders/OBJLoader.js\";\r\nimport { MTLLoader } from \"three/addons/loaders/MTLLoader.js\";\r\n\r\nconst scene = new THREE.Scene();\r\nscene.background = new THREE.Color(0x111111);\r\n\r\nconst camera = new THREE.PerspectiveCamera(\r\n60,\r\nwindow.innerWidth/window.innerHeight,\r\n0.1,\r\n10000\r\n);\r\n\r\ncamera.position.set(600,400,800);\r\n\r\nconst renderer = new THREE.WebGLRenderer({antialias:true});\r\nrenderer.setSize(window.innerWidth,window.innerHeight);\r\n\r\ndocument.body.appendChild(renderer.domElement);\r\n\r\nconst controls = new OrbitControls(camera,renderer.domElement);\r\ncontrols.enableDamping=true;\r\n\r\nscene.add(new THREE.AmbientLight(0xffffff,1));\r\n\r\nconst sun = new TH"
+  },
+  {
+    "user": "Admin",
+    "color": "#3498db",
+    "event": "CHANGE",
+    "file": "public\\app.js",
+    "xp": 37,
+    "lines": 181,
+    "timestamp": "2026-03-05T10:18:06.160Z",
+    "diff": "import * as THREE from \"three\";\r\nimport { OrbitControls } from \"three/addons/controls/OrbitControls.js\";\r\nimport { OBJLoader } from \"three/addons/loaders/OBJLoader.js\";\r\nimport { MTLLoader } from \"three/addons/loaders/MTLLoader.js\";\r\n\r\nconst scene = new THREE.Scene();\r\nscene.background = new THREE.Color(0x111111);\r\n\r\nconst camera = new THREE.PerspectiveCamera(\r\n60,\r\nwindow.innerWidth/window.innerHeight,\r\n0.1,\r\n10000\r\n);\r\n\r\ncamera.position.set(600,400,800);\r\n\r\nconst renderer = new THREE.WebGLRenderer({antialias:true});\r\nrenderer.setSize(window.innerWidth,window.innerHeight);\r\n\r\ndocument.body.appendChild(renderer.domElement);\r\n\r\nconst controls = new OrbitControls(camera,renderer.domElement);\r\ncontrols.enableDamping=true;\r\n\r\nscene.add(new THREE.AmbientLight(0xffffff,1));\r\n\r\nconst sun = new TH"
+  },
+  {
+    "user": "Admin",
+    "color": "#3498db",
+    "event": "CHANGE",
+    "file": "public\\app.js",
+    "xp": 37,
+    "lines": 181,
+    "timestamp": "2026-03-05T10:18:01.504Z",
+    "diff": "import * as THREE from \"three\";\r\nimport { OrbitControls } from \"three/addons/controls/OrbitControls.js\";\r\nimport { OBJLoader } from \"three/addons/loaders/OBJLoader.js\";\r\nimport { MTLLoader } from \"three/addons/loaders/MTLLoader.js\";\r\n\r\nconst scene = new THREE.Scene();\r\nscene.background = new THREE.Color(0x111111);\r\n\r\nconst camera = new THREE.PerspectiveCamera(\r\n60,\r\nwindow.innerWidth/window.innerHeight,\r\n0.1,\r\n10000\r\n);\r\n\r\ncamera.position.set(600,400,800);\r\n\r\nconst renderer = new THREE.WebGLRenderer({antialias:true});\r\nrenderer.setSize(window.innerWidth,window.innerHeight);\r\n\r\ndocument.body.appendChild(renderer.domElement);\r\n\r\nconst controls = new OrbitControls(camera,renderer.domElement);\r\ncontrols.enableDamping=true;\r\n\r\nscene.add(new THREE.AmbientLight(0xffffff,1));\r\n\r\nconst sun = new TH"
+  },
+  {
+    "user": "Admin",
+    "color": "#3498db",
+    "event": "CHANGE",
+    "file": "public\\app.js",
+    "xp": 37,
+    "lines": 181,
+    "timestamp": "2026-03-05T10:17:42.453Z",
+    "diff": "import * as THREE from \"three\";\r\nimport { OrbitControls } from \"three/addons/controls/OrbitControls.js\";\r\nimport { OBJLoader } from \"three/addons/loaders/OBJLoader.js\";\r\nimport { MTLLoader } from \"three/addons/loaders/MTLLoader.js\";\r\n\r\nconst scene = new THREE.Scene();\r\nscene.background = new THREE.Color(0x111111);\r\n\r\nconst camera = new THREE.PerspectiveCamera(\r\n60,\r\nwindow.innerWidth/window.innerHeight,\r\n0.1,\r\n10000\r\n);\r\n\r\ncamera.position.set(600,400,800);\r\n\r\nconst renderer = new THREE.WebGLRenderer({antialias:true});\r\nrenderer.setSize(window.innerWidth,window.innerHeight);\r\n\r\ndocument.body.appendChild(renderer.domElement);\r\n\r\nconst controls = new OrbitControls(camera,renderer.domElement);\r\ncontrols.enableDamping=true;\r\n\r\nscene.add(new THREE.AmbientLight(0xffffff,1));\r\n\r\nconst sun = new TH"
+  },
+  {
+    "user": "Admin",
+    "color": "#3498db",
+    "event": "CHANGE",
+    "file": "public\\index.html",
+    "xp": 11,
+    "lines": 52,
+    "timestamp": "2026-03-05T10:17:32.950Z",
+    "diff": "<!DOCTYPE html>\r\n<html>\r\n<head>\r\n\r\n<title>Github Forest</title>\r\n\r\n<style>\r\n\r\nbody{\r\nmargin:0;\r\noverflow:hidden;\r\nbackground:#111;\r\nfont-family:sans-serif;\r\n}\r\n\r\n#hud{\r\nposition:absolute;\r\ntop:20px;\r\nleft:20px;\r\ncolor:white;\r\nz-index:10;\r\n}\r\n\r\n#count{\r\ncolor:#00ffcc;\r\nfont-weight:bold;\r\n}\r\n\r\n</style>\r\n\r\n</head>\r\n\r\n<body>\r\n\r\n<div id=\"hud\">\r\n<h1>@bhar1itr</h1>\r\n<div id=\"count\">Loading repos...</div>\r\n</div>\r\n\r\n<script type=\"importmap\">\r\n{\r\n\"imports\": {\r\n\"three\": \"https://unpkg.com/three@0.160.0/build/three.module.js\",\r\n\"three/addons/\": \"https://unpkg.com/three@0.160.0/examples/jsm/\"\r\n}\r\n}\r\n</script>\r\n\r\n<script type=\"module\" src=\"app.js\"></script>\r\n\r\n</body>\r\n</html>"
+  },
+  {
+    "user": "Admin",
+    "color": "#3498db",
+    "event": "CHANGE",
+    "file": "server.js",
+    "xp": 73,
+    "lines": 363,
+    "timestamp": "2026-03-05T10:17:25.629Z",
+    "diff": "// import express from \"express\";\r\n// import fs from \"fs/promises\";\r\n// import { existsSync, writeFileSync } from \"fs\";\r\n\r\n// const app = express();\r\n// const LOG_FILE = \".shadow-trace.json\";\r\n\r\n// if (!existsSync(LOG_FILE)) writeFileSync(LOG_FILE, JSON.stringify([]));\r\n\r\n// app.use(express.json());\r\n\r\n// app.post(\"/update\", async (req, res) => {\r\n//     try {\r\n//         const { user, xp, color } = req.body;\r\n//         if (!user || typeof user !== 'string') return res.status(400).send(\"Invalid User\");\r\n        \r\n//         const data = await fs.readFile(LOG_FILE, \"utf-8\");\r\n//         const logs = JSON.parse(data);\r\n\r\n//         const newEntry = {\r\n//             user: user.substring(0, 20),\r\n//             xp: Number(xp) || 0,\r\n//             color: /^#[0-9A-F]{6}$/i.test(color) ? color"
+  },
+  {
+    "user": "Admin",
+    "color": "#3498db",
+    "event": "ADD",
+    "file": "public\\models\\mount.blend1.obj",
+    "xp": 2140,
+    "lines": 10696,
+    "timestamp": "2026-03-05T10:16:55.961Z",
+    "diff": "# Blender v2.70 (sub 0) OBJ File: 'mount.blend1.blend'\n# www.blender.org\nmtllib mount.blend1.mtl\no Plane\nv -16.548750 -0.206907 9.209969\nv 8.962208 -0.206907 9.209969\nv -16.548750 -0.206907 -16.300989\nv 8.962208 -0.206907 -16.300989\nusemtl Material\ns off\nf 1 2 4 3\no Landscape\nv -3.230412 0.000213 4.191674\nv -3.230409 0.000042 4.049577\nv -3.230408 0.000000 3.907485\nv -3.230408 0.000000 3.765394\nv -3.230408 0.000000 3.623304\nv -3.230408 0.000000 3.481214\nv -3.230408 0.000000 3.339123\nv -3.230408 0.000000 3.197033\nv -3.230408 0.000000 3.054942\nv -3.230408 0.000000 2.912852\nv -3.230408 0.000000 2.770762\nv -3.230408 0.000000 2.628671\nv -3.230408 0.000000 2.486581\nv -3.230408 0.000000 2.344491\nv -3.230408 0.000000 2.202400\nv -3.230408 0.000000 2.060310\nv -3.230408 0.000000 1.918220\nv -3.230408 0"
+  },
+  {
+    "user": "Admin",
+    "color": "#3498db",
+    "event": "ADD",
+    "file": "public\\models\\mount.blend1.mtl",
+    "xp": 5,
+    "lines": 22,
+    "timestamp": "2026-03-05T10:16:51.680Z",
+    "diff": "# Blender MTL File: 'mount.blend1.blend'\n# Material Count: 2\n\nnewmtl Material\nNs 96.078431\nKa 0.000000 0.000000 0.000000\nKd 0.050977 0.050977 0.050977\nKs 0.001641 0.001641 0.001641\nNi 1.000000\nd 1.000000\nillum 2\n\nnewmtl Material.001\nNs 96.078431\nKa 0.000000 0.000000 0.000000\nKd 0.640000 0.640000 0.640000\nKs 0.000000 0.000000 0.000000\nNi 1.000000\nd 1.000000\nillum 1\nmap_Kd D:\\Soft\\blender-2.70a-windows32\\FILES\\Textures\\Ground\\GRASS\\ground_grass_3264_4062_Small.jpg\n"
+  },
+  {
+    "user": "Admin",
+    "color": "#3498db",
+    "event": "ADD",
+    "file": "public\\models\\mount.mtl",
+    "xp": 5,
+    "lines": 22,
+    "timestamp": "2026-03-05T10:16:36.918Z",
+    "diff": "# Blender MTL File: 'mount.blend1.blend'\n# Material Count: 2\n\nnewmtl Material\nNs 96.078431\nKa 0.000000 0.000000 0.000000\nKd 0.050977 0.050977 0.050977\nKs 0.001641 0.001641 0.001641\nNi 1.000000\nd 1.000000\nillum 2\n\nnewmtl Material.001\nNs 96.078431\nKa 0.000000 0.000000 0.000000\nKd 0.640000 0.640000 0.640000\nKs 0.000000 0.000000 0.000000\nNi 1.000000\nd 1.000000\nillum 1\nmap_Kd D:\\Soft\\blender-2.70a-windows32\\FILES\\Textures\\Ground\\GRASS\\ground_grass_3264_4062_Small.jpg\n"
+  },
+  {
+    "user": "Admin",
+    "color": "#3498db",
+    "event": "ADD",
+    "file": "public\\models\\mount.obj",
+    "xp": 2140,
+    "lines": 10696,
+    "timestamp": "2026-03-05T10:16:27.197Z",
+    "diff": "# Blender v2.70 (sub 0) OBJ File: 'mount.blend1.blend'\n# www.blender.org\nmtllib mount.blend1.mtl\no Plane\nv -16.548750 -0.206907 9.209969\nv 8.962208 -0.206907 9.209969\nv -16.548750 -0.206907 -16.300989\nv 8.962208 -0.206907 -16.300989\nusemtl Material\ns off\nf 1 2 4 3\no Landscape\nv -3.230412 0.000213 4.191674\nv -3.230409 0.000042 4.049577\nv -3.230408 0.000000 3.907485\nv -3.230408 0.000000 3.765394\nv -3.230408 0.000000 3.623304\nv -3.230408 0.000000 3.481214\nv -3.230408 0.000000 3.339123\nv -3.230408 0.000000 3.197033\nv -3.230408 0.000000 3.054942\nv -3.230408 0.000000 2.912852\nv -3.230408 0.000000 2.770762\nv -3.230408 0.000000 2.628671\nv -3.230408 0.000000 2.486581\nv -3.230408 0.000000 2.344491\nv -3.230408 0.000000 2.202400\nv -3.230408 0.000000 2.060310\nv -3.230408 0.000000 1.918220\nv -3.230408 0"
+  },
+  {
+    "user": "Admin",
+    "color": "#3498db",
+    "event": "CHANGE",
+    "file": "public\\index.html",
+    "xp": 6,
+    "lines": 26,
+    "timestamp": "2026-03-05T10:14:28.257Z",
+    "diff": "<!DOCTYPE html>\r\n<html>\r\n<head>\r\n    <title>Primeval 3D | ${GITHUB_USER}</title>\r\n    <style>\r\n        body { margin: 0; overflow: hidden; background: #111; font-family: sans-serif; }\r\n        #hud { position: absolute; top: 20px; left: 20px; color: white; pointer-events: none; z-index: 100; }\r\n        #count { color: #00ffcc; font-weight: bold; }\r\n    </style>\r\n</head>\r\n<body>\r\n    <div id=\"hud\">\r\n        <h1 id=\"user-display\">@bhar1itr</h1>\r\n        <div id=\"count\">Connecting...</div>\r\n    </div>\r\n    <script type=\"importmap\">\r\n    {\r\n        \"imports\": {\r\n            \"three\": \"https://unpkg.com/three@0.160.0/build/three.module.js\",\r\n            \"three/addons/\": \"https://unpkg.com/three@0.160.0/examples/jsm/\"\r\n        }\r\n    }\r\n    </script>\r\n    <script type=\"module\" src=\"app.js\"></scri"
+  },
+  {
+    "user": "Admin",
+    "color": "#3498db",
+    "event": "CHANGE",
+    "file": "public\\app.js",
+    "xp": 22,
+    "lines": 107,
+    "timestamp": "2026-03-05T10:14:22.949Z",
+    "diff": "import * as THREE from \"three\";\r\nimport { OrbitControls } from \"three/addons/controls/OrbitControls.js\";\r\nimport { OBJLoader } from \"three/addons/loaders/OBJLoader.js\";\r\nimport { MTLLoader } from \"three/addons/loaders/MTLLoader.js\";\r\n\r\nconst scene = new THREE.Scene();\r\n// Changed to dark grey so you can see if models are unlit vs missing\r\nscene.background = new THREE.Color(0x111111); \r\nscene.fog = new THREE.FogExp2(0x111111, 0.0005);\r\n\r\nconst camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 1, 10000);\r\n// Pull camera back significantly\r\ncamera.position.set(1200, 800, 1500); \r\n\r\nconst renderer = new THREE.WebGLRenderer({ antialias: true });\r\nrenderer.setSize(window.innerWidth, window.innerHeight);\r\nrenderer.toneMapping = THREE.ACESFilmicToneMapping;\r\ndocument"
+  },
+  {
+    "user": "Admin",
+    "color": "#3498db",
+    "event": "CHANGE",
+    "file": "server.js",
+    "xp": 69,
+    "lines": 344,
+    "timestamp": "2026-03-05T10:14:14.129Z",
+    "diff": "// import express from \"express\";\r\n// import fs from \"fs/promises\";\r\n// import { existsSync, writeFileSync } from \"fs\";\r\n\r\n// const app = express();\r\n// const LOG_FILE = \".shadow-trace.json\";\r\n\r\n// if (!existsSync(LOG_FILE)) writeFileSync(LOG_FILE, JSON.stringify([]));\r\n\r\n// app.use(express.json());\r\n\r\n// app.post(\"/update\", async (req, res) => {\r\n//     try {\r\n//         const { user, xp, color } = req.body;\r\n//         if (!user || typeof user !== 'string') return res.status(400).send(\"Invalid User\");\r\n        \r\n//         const data = await fs.readFile(LOG_FILE, \"utf-8\");\r\n//         const logs = JSON.parse(data);\r\n\r\n//         const newEntry = {\r\n//             user: user.substring(0, 20),\r\n//             xp: Number(xp) || 0,\r\n//             color: /^#[0-9A-F]{6}$/i.test(color) ? color"
+  },
+  {
+    "user": "Admin",
+    "color": "#3498db",
+    "event": "CHANGE",
+    "file": "public\\app.js",
+    "xp": 21,
+    "lines": 104,
+    "timestamp": "2026-03-05T10:12:39.721Z",
+    "diff": "import * as THREE from \"three\";\r\nimport { OrbitControls } from \"three/addons/controls/OrbitControls.js\";\r\nimport { OBJLoader } from \"three/addons/loaders/OBJLoader.js\";\r\nimport { MTLLoader } from \"three/addons/loaders/MTLLoader.js\";\r\n\r\nconst scene = new THREE.Scene();\r\nscene.background = new THREE.Color(0x02040a);\r\nscene.fog = new THREE.FogExp2(0x02040a, 0.001);\r\n\r\nconst camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 1, 10000);\r\ncamera.position.set(500, 400, 800);\r\n\r\nconst renderer = new THREE.WebGLRenderer({ antialias: true });\r\nrenderer.setSize(window.innerWidth, window.innerHeight);\r\nrenderer.toneMapping = THREE.ACESFilmicToneMapping;\r\ndocument.body.appendChild(renderer.domElement);\r\n\r\nconst controls = new OrbitControls(camera, renderer.domElement);\r\nco"
+  },
+  {
+    "user": "Admin",
+    "color": "#3498db",
+    "event": "CHANGE",
+    "file": "server.js",
+    "xp": 64,
+    "lines": 318,
+    "timestamp": "2026-03-05T10:12:32.918Z",
+    "diff": "// import express from \"express\";\r\n// import fs from \"fs/promises\";\r\n// import { existsSync, writeFileSync } from \"fs\";\r\n\r\n// const app = express();\r\n// const LOG_FILE = \".shadow-trace.json\";\r\n\r\n// if (!existsSync(LOG_FILE)) writeFileSync(LOG_FILE, JSON.stringify([]));\r\n\r\n// app.use(express.json());\r\n\r\n// app.post(\"/update\", async (req, res) => {\r\n//     try {\r\n//         const { user, xp, color } = req.body;\r\n//         if (!user || typeof user !== 'string') return res.status(400).send(\"Invalid User\");\r\n        \r\n//         const data = await fs.readFile(LOG_FILE, \"utf-8\");\r\n//         const logs = JSON.parse(data);\r\n\r\n//         const newEntry = {\r\n//             user: user.substring(0, 20),\r\n//             xp: Number(xp) || 0,\r\n//             color: /^#[0-9A-F]{6}$/i.test(color) ? color"
+  },
+  {
+    "user": "Admin",
+    "color": "#3498db",
+    "event": "ADD",
+    "file": "public\\models\\mount.blend1.obj",
+    "xp": 2140,
+    "lines": 10696,
+    "timestamp": "2026-03-05T10:09:36.260Z",
+    "diff": "# Blender v2.70 (sub 0) OBJ File: 'mount.blend1.blend'\n# www.blender.org\nmtllib mount.blend1.mtl\no Plane\nv -16.548750 -0.206907 9.209969\nv 8.962208 -0.206907 9.209969\nv -16.548750 -0.206907 -16.300989\nv 8.962208 -0.206907 -16.300989\nusemtl Material\ns off\nf 1 2 4 3\no Landscape\nv -3.230412 0.000213 4.191674\nv -3.230409 0.000042 4.049577\nv -3.230408 0.000000 3.907485\nv -3.230408 0.000000 3.765394\nv -3.230408 0.000000 3.623304\nv -3.230408 0.000000 3.481214\nv -3.230408 0.000000 3.339123\nv -3.230408 0.000000 3.197033\nv -3.230408 0.000000 3.054942\nv -3.230408 0.000000 2.912852\nv -3.230408 0.000000 2.770762\nv -3.230408 0.000000 2.628671\nv -3.230408 0.000000 2.486581\nv -3.230408 0.000000 2.344491\nv -3.230408 0.000000 2.202400\nv -3.230408 0.000000 2.060310\nv -3.230408 0.000000 1.918220\nv -3.230408 0"
+  },
+  {
+    "user": "Admin",
+    "color": "#3498db",
+    "event": "ADD",
+    "file": "public\\models\\mount.blend1.blend1",
+    "xp": 998,
+    "lines": 4986,
+    "timestamp": "2026-03-05T10:09:36.255Z",
+    "diff": "BLENDER_v270RENDH\u0000\u0000\u0000\u0004�\"\u0000\u0000\u0000\u0000\u0000\u0001\u0000\u0000\u0000\u0001\u0000\u0000\u0000�\u0000\u0000\u0000Scene\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000TEST\b\u0000\u0001\u0000\f��\u0007\u0000\u0000\u0000\u0000\u0001\u0000\u0000\u0000�\u0000\u0000\u0000�\u0000\u0000\u0000\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�!!$�99?�FFM�FFM�FFM�FFM�FFM�FFM�FFM�FFM�FFM�FFM�FFM�FFM�FFM�::?�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�"
+  },
+  {
+    "user": "Admin",
+    "color": "#3498db",
+    "event": "ADD",
+    "file": "public\\models\\mount.blend1.3ds",
+    "xp": 410,
+    "lines": 2045,
+    "timestamp": "2026-03-05T10:09:36.245Z",
+    "diff": "MMA+\u0002\u0000\u0002\u0000\n\u0000\u0000\u0000\u0003\u0000\u0000\u0000==1+\u0002\u0000���\u0000\u0000\u0000\u0000�\u0013\u0000\u0000\u0000Material.001\u0000\u0010�\u000f\u0000\u0000\u0000\u0011\u0000\t\u0000\u0000\u0000��� �\u000f\u0000\u0000\u0000\u0011\u0000\t\u0000\u0000\u0000���0�\u000f\u0000\u0000\u0000\u0011\u0000\t\u0000\u0000\u0000���\u0000�I\u0000\u0000\u0000\u0000�\u0013\u0000\u0000\u0000ground_grass\u0000Q�\b\u0000\u0000\u0000\u0000\u0000T�\n\u0000\u0000\u0000\u0000\u0000�?V�\n\u0000\u0000\u0000\u0000\u0000�?X�\n\u0000\u0000\u0000\u0000\u0000\u0000\u0000Z�\n\u0000\u0000\u0000\u0000\u0000\u0000\u0000��B\u0000\u0000\u0000\u0000�\u000f\u0000\u0000\u0000Material\u0000\u0010�\u000f\u0000\u0000\u0000\u0011\u0000\t\u0000\u0000\u0000\u0010\u0010\u0010 �\u000f\u0000\u0000\u0000\u0011\u0000\t\u0000\u0000\u0000\u0010\u0010\u00100�\u000f\u0000\u0000\u0000\u0011\u0000\t\u0000\u0000\u0000\t\t\t\u0000@�\u0000\u0000\u0000Plane\u0000\u0000A�\u0000\u0000\u0000\u0010A8\u0000\u0000\u0000\u0004\u0000�c��\b\\\u0013�f�S�4e\u000fA\b\\\u0013�f�S��c��mh�Af�S�4e\u000fAmh�Af�S� A-\u0000\u0000\u0000\u0002\u0000\u0000\u0000\u0001\u0000\u0003\u0000\u0000\u0000\u0000\u0000\u0003\u0000\u0002\u0000\u0000\u00000A\u0015\u0000\u0000\u0000Material\u0000\u0002\u0000\u0000\u0000\u0001\u0000`A6\u0000\u0000\u0000q\u0016LA\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000q\u0016LA\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000q\u0016LA��r���b@f�S�\u0000@�)\u0002\u0000Landscape\u0000\u0000A�)\u0002\u0000\u0010AȨ\u0000\u0000\u0010\u000e\u0010�N�2\"�� <_9\u0005�N�\"����F18\u0001�N�:\u0014z�\u0000\u0000\u0000\u0000\u0001�N�7�p�\u0000\u0000\u0000\u0000\u0001�N�5�g�\u0000\u0000\u0000\u0000\u0001�N�4�^�\u0000\u0000\u0000\u0000\u0001�N�2�U�\u0000\u0000\u0000\u0000\u0001�N�/�L�\u0000\u0000\u0000\u0000\u0001�N�-�C�\u0000\u0000\u0000\u0000\u0001�N�+l:�\u0000\u0000\u0000\u0000\u0001�N�)T1�\u0000\u0000\u0000\u0000\u0001�N�'<(�\u0000\u0000\u0000\u0000\u0001�N�$$\u001f�\u0000\u0000\u0000\u0000\u0001�N�#\f\u0016�\u0000\u0000\u0000\u0000\u0001�N�!�\f�\u0000\u0000\u0000\u0000\u0001�N�\u001f�\u0003�\u0000\u0000\u0000\u0000\u0001�N�9���\u0000\u0000\u0000\u0000\u0001�N�5X�\u0000\u0000\u0000\u0000\u0001�N�0(ѿ\u0000\u0000\u0000\u0000\u0001�N�-���\u0000\u0000\u0000\u0000\u0001�N�(Ȭ�\u0000\u0000\u0000\u0000\u0001�N�$���\u0000\u0000\u0000\u0000\u0001�N�\u001fh��\u0000\u0000\u0000\u0000\u0001�N�7pl�\u0000\u0000\u0000\u0000\u0001�N�.\u0010H�\u0000\u0000\u0000\u0000\u0001�N�&�#�\u0000\u0000\u0000\u0000\u0001�N�;���\u0000\u0000\u0000\u0000\u0001�N�*ൾ\u0000\u0000\u0000\u0000\u0001�N�2@Z�\u0000\u0000\u0000\u0000\u0001�N�\"���\u0000\u0000\u0000\u0000\u0001�N�\"��=\u0000\u0000\u0000\u0000"
+  },
+  {
+    "user": "Admin",
+    "color": "#3498db",
+    "event": "ADD",
+    "file": "public\\models\\mount.blend1.mtl",
+    "xp": 5,
+    "lines": 22,
+    "timestamp": "2026-03-05T10:09:36.234Z",
+    "diff": "# Blender MTL File: 'mount.blend1.blend'\n# Material Count: 2\n\nnewmtl Material\nNs 96.078431\nKa 0.000000 0.000000 0.000000\nKd 0.050977 0.050977 0.050977\nKs 0.001641 0.001641 0.001641\nNi 1.000000\nd 1.000000\nillum 2\n\nnewmtl Material.001\nNs 96.078431\nKa 0.000000 0.000000 0.000000\nKd 0.640000 0.640000 0.640000\nKs 0.000000 0.000000 0.000000\nNi 1.000000\nd 1.000000\nillum 1\nmap_Kd D:\\Soft\\blender-2.70a-windows32\\FILES\\Textures\\Ground\\GRASS\\ground_grass_3264_4062_Small.jpg\n"
+  },
+  {
+    "user": "Admin",
+    "color": "#3498db",
+    "event": "ADD",
+    "file": "public\\models\\ground_grass_3264_4062_Small.jpg",
+    "xp": 420,
+    "lines": 2096,
+    "timestamp": "2026-03-05T10:09:36.231Z",
+    "diff": "����\u0000\u0010JFIF\u0000\u0001\u0001\u0000\u0000\u0001\u0000\u0001\u0000\u0000��\u0000\fNeoGeo\b\u0000\u0000Z��\u0000C\u0000\u0003\u0002\u0002\u0003\u0002\u0002\u0003\u0003\u0003\u0003\u0004\u0003\u0003\u0004\u0005\b\u0005\u0005\u0004\u0004\u0005\n\u0007\u0007\u0006\b\f\n\f\f\u000b\n\u000b\u000b\r\u000e\u0012\u0010\r\u000e\u0011\u000e\u000b\u000b\u0010\u0016\u0010\u0011\u0013\u0014\u0015\u0015\u0015\f\u000f\u0017\u0018\u0016\u0014\u0018\u0012\u0014\u0015\u0014��\u0000C\u0001\u0003\u0004\u0004\u0005\u0004\u0005\t\u0005\u0005\t\u0014\r\u000b\r\u0014\u0014\u0014\u0014\u0014\u0014\u0014\u0014\u0014\u0014\u0014\u0014\u0014\u0014\u0014\u0014\u0014\u0014\u0014\u0014\u0014\u0014\u0014\u0014\u0014\u0014\u0014\u0014\u0014\u0014\u0014\u0014\u0014\u0014\u0014\u0014\u0014\u0014\u0014\u0014\u0014\u0014\u0014\u0014\u0014\u0014\u0014\u0014\u0014\u0014��\u0000\u0011\b\u0003g\u0004�\u0003\u0001\"\u0000\u0002\u0011\u0001\u0003\u0011\u0001��\u0000\u001f\u0000\u0000\u0001\u0005\u0001\u0001\u0001\u0001\u0001\u0001\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b\t\n\u000b��\u0000�\u0010\u0000\u0002\u0001\u0003\u0003\u0002\u0004\u0003\u0005\u0005\u0004\u0004\u0000\u0000\u0001}\u0001\u0002\u0003\u0000\u0004\u0011\u0005\u0012!1A\u0006\u0013Qa\u0007\"q\u00142���\b#B��\u0015R��$3br�\t\n\u0016\u0017\u0018\u0019\u001a%&'()*456789:CDEFGHIJSTUVWXYZcdefghijstuvwxyz���������������������������������������������������������������������������\u0000\u001f\u0001\u0000\u0003\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0000\u0000\u0000\u0000\u0000\u0000\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b\t\n\u000b��\u0000�\u0011\u0000\u0002\u0001\u0002\u0004\u0004\u0003\u0004\u0007\u0005\u0004\u0004\u0000\u0001\u0002w\u0000\u0001\u0002\u0003\u0011\u0004\u0005!1\u0006\u0012AQ\u0007aq\u0013\"2�\b\u0014B����\t#3R�\u0015br�\n\u0016$4�%�\u0017\u0018\u0019\u001a&'()*56789:CDEFGHIJSTUVWXYZcdefghijstuvwxyz��������������������������������������������������������������������������\u0000\f\u0003\u0001\u0000\u0002\u0011\u0003\u0011\u0000?\u0000�4�K����t���\\l\u0018%�\u0012\u000e�y9TP\u0006s��S����7R[�����\u0002.���%�P�9\u0000\f3d��8�z�ԋ��\u001b��nnf�i/�A5�����,1�\u001b��q�I� `��q\\\u001e�\u0013�V�GkspRq\u0015������\u00196�˂�\u0016��z�1�Ҷ��l߳�WJ[�\u0000���h\\�W^'���\u001a�7VR\u0015��x�\u0006"
+  },
+  {
+    "user": "Admin",
+    "color": "#3498db",
+    "event": "ADD",
+    "file": "public\\models\\mount.blend1.blend",
+    "xp": 901,
+    "lines": 4503,
+    "timestamp": "2026-03-05T10:09:36.181Z",
+    "diff": "BLENDER_v270RENDH\u0000\u0000\u00000�\"\u0000\u0000\u0000\u0000\u0000\u0001\u0000\u0000\u0000\u0001\u0000\u0000\u0000�\u0000\u0000\u0000Scene\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000TEST\b\u0000\u0001\u0000�^\b\u0007\u0000\u0000\u0000\u0000\u0001\u0000\u0000\u0000�\u0000\u0000\u0000�\u0000\u0000\u0000\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�!!$�99?�FFM�FFM�FFM�FFM�FFM�FFM�FFM�FFM�FFM�FFM�FFM�FFM�FFM�::?�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�"
+  },
+  {
+    "user": "Admin",
+    "color": "#3498db",
+    "event": "ADD",
+    "file": "mount.blend1.obj",
+    "xp": 2140,
+    "lines": 10696,
+    "timestamp": "2026-03-05T10:08:45.301Z",
+    "diff": "# Blender v2.70 (sub 0) OBJ File: 'mount.blend1.blend'\n# www.blender.org\nmtllib mount.blend1.mtl\no Plane\nv -16.548750 -0.206907 9.209969\nv 8.962208 -0.206907 9.209969\nv -16.548750 -0.206907 -16.300989\nv 8.962208 -0.206907 -16.300989\nusemtl Material\ns off\nf 1 2 4 3\no Landscape\nv -3.230412 0.000213 4.191674\nv -3.230409 0.000042 4.049577\nv -3.230408 0.000000 3.907485\nv -3.230408 0.000000 3.765394\nv -3.230408 0.000000 3.623304\nv -3.230408 0.000000 3.481214\nv -3.230408 0.000000 3.339123\nv -3.230408 0.000000 3.197033\nv -3.230408 0.000000 3.054942\nv -3.230408 0.000000 2.912852\nv -3.230408 0.000000 2.770762\nv -3.230408 0.000000 2.628671\nv -3.230408 0.000000 2.486581\nv -3.230408 0.000000 2.344491\nv -3.230408 0.000000 2.202400\nv -3.230408 0.000000 2.060310\nv -3.230408 0.000000 1.918220\nv -3.230408 0"
+  },
+  {
+    "user": "Admin",
+    "color": "#3498db",
+    "event": "ADD",
+    "file": "mount.blend1.mtl",
+    "xp": 5,
+    "lines": 22,
+    "timestamp": "2026-03-05T10:08:45.296Z",
+    "diff": "# Blender MTL File: 'mount.blend1.blend'\n# Material Count: 2\n\nnewmtl Material\nNs 96.078431\nKa 0.000000 0.000000 0.000000\nKd 0.050977 0.050977 0.050977\nKs 0.001641 0.001641 0.001641\nNi 1.000000\nd 1.000000\nillum 2\n\nnewmtl Material.001\nNs 96.078431\nKa 0.000000 0.000000 0.000000\nKd 0.640000 0.640000 0.640000\nKs 0.000000 0.000000 0.000000\nNi 1.000000\nd 1.000000\nillum 1\nmap_Kd D:\\Soft\\blender-2.70a-windows32\\FILES\\Textures\\Ground\\GRASS\\ground_grass_3264_4062_Small.jpg\n"
+  },
+  {
+    "user": "Admin",
+    "color": "#3498db",
+    "event": "ADD",
+    "file": "mount.blend1.blend1",
+    "xp": 998,
+    "lines": 4986,
+    "timestamp": "2026-03-05T10:08:45.292Z",
+    "diff": "BLENDER_v270RENDH\u0000\u0000\u0000\u0004�\"\u0000\u0000\u0000\u0000\u0000\u0001\u0000\u0000\u0000\u0001\u0000\u0000\u0000�\u0000\u0000\u0000Scene\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000TEST\b\u0000\u0001\u0000\f��\u0007\u0000\u0000\u0000\u0000\u0001\u0000\u0000\u0000�\u0000\u0000\u0000�\u0000\u0000\u0000\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�!!$�99?�FFM�FFM�FFM�FFM�FFM�FFM�FFM�FFM�FFM�FFM�FFM�FFM�FFM�::?�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�"
+  },
+  {
+    "user": "Admin",
+    "color": "#3498db",
+    "event": "ADD",
+    "file": "mount.blend1.3ds",
+    "xp": 410,
+    "lines": 2045,
+    "timestamp": "2026-03-05T10:08:45.278Z",
+    "diff": "MMA+\u0002\u0000\u0002\u0000\n\u0000\u0000\u0000\u0003\u0000\u0000\u0000==1+\u0002\u0000���\u0000\u0000\u0000\u0000�\u0013\u0000\u0000\u0000Material.001\u0000\u0010�\u000f\u0000\u0000\u0000\u0011\u0000\t\u0000\u0000\u0000��� �\u000f\u0000\u0000\u0000\u0011\u0000\t\u0000\u0000\u0000���0�\u000f\u0000\u0000\u0000\u0011\u0000\t\u0000\u0000\u0000���\u0000�I\u0000\u0000\u0000\u0000�\u0013\u0000\u0000\u0000ground_grass\u0000Q�\b\u0000\u0000\u0000\u0000\u0000T�\n\u0000\u0000\u0000\u0000\u0000�?V�\n\u0000\u0000\u0000\u0000\u0000�?X�\n\u0000\u0000\u0000\u0000\u0000\u0000\u0000Z�\n\u0000\u0000\u0000\u0000\u0000\u0000\u0000��B\u0000\u0000\u0000\u0000�\u000f\u0000\u0000\u0000Material\u0000\u0010�\u000f\u0000\u0000\u0000\u0011\u0000\t\u0000\u0000\u0000\u0010\u0010\u0010 �\u000f\u0000\u0000\u0000\u0011\u0000\t\u0000\u0000\u0000\u0010\u0010\u00100�\u000f\u0000\u0000\u0000\u0011\u0000\t\u0000\u0000\u0000\t\t\t\u0000@�\u0000\u0000\u0000Plane\u0000\u0000A�\u0000\u0000\u0000\u0010A8\u0000\u0000\u0000\u0004\u0000�c��\b\\\u0013�f�S�4e\u000fA\b\\\u0013�f�S��c��mh�Af�S�4e\u000fAmh�Af�S� A-\u0000\u0000\u0000\u0002\u0000\u0000\u0000\u0001\u0000\u0003\u0000\u0000\u0000\u0000\u0000\u0003\u0000\u0002\u0000\u0000\u00000A\u0015\u0000\u0000\u0000Material\u0000\u0002\u0000\u0000\u0000\u0001\u0000`A6\u0000\u0000\u0000q\u0016LA\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000q\u0016LA\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000q\u0016LA��r���b@f�S�\u0000@�)\u0002\u0000Landscape\u0000\u0000A�)\u0002\u0000\u0010AȨ\u0000\u0000\u0010\u000e\u0010�N�2\"�� <_9\u0005�N�\"����F18\u0001�N�:\u0014z�\u0000\u0000\u0000\u0000\u0001�N�7�p�\u0000\u0000\u0000\u0000\u0001�N�5�g�\u0000\u0000\u0000\u0000\u0001�N�4�^�\u0000\u0000\u0000\u0000\u0001�N�2�U�\u0000\u0000\u0000\u0000\u0001�N�/�L�\u0000\u0000\u0000\u0000\u0001�N�-�C�\u0000\u0000\u0000\u0000\u0001�N�+l:�\u0000\u0000\u0000\u0000\u0001�N�)T1�\u0000\u0000\u0000\u0000\u0001�N�'<(�\u0000\u0000\u0000\u0000\u0001�N�$$\u001f�\u0000\u0000\u0000\u0000\u0001�N�#\f\u0016�\u0000\u0000\u0000\u0000\u0001�N�!�\f�\u0000\u0000\u0000\u0000\u0001�N�\u001f�\u0003�\u0000\u0000\u0000\u0000\u0001�N�9���\u0000\u0000\u0000\u0000\u0001�N�5X�\u0000\u0000\u0000\u0000\u0001�N�0(ѿ\u0000\u0000\u0000\u0000\u0001�N�-���\u0000\u0000\u0000\u0000\u0001�N�(Ȭ�\u0000\u0000\u0000\u0000\u0001�N�$���\u0000\u0000\u0000\u0000\u0001�N�\u001fh��\u0000\u0000\u0000\u0000\u0001�N�7pl�\u0000\u0000\u0000\u0000\u0001�N�.\u0010H�\u0000\u0000\u0000\u0000\u0001�N�&�#�\u0000\u0000\u0000\u0000\u0001�N�;���\u0000\u0000\u0000\u0000\u0001�N�*ൾ\u0000\u0000\u0000\u0000\u0001�N�2@Z�\u0000\u0000\u0000\u0000\u0001�N�\"���\u0000\u0000\u0000\u0000\u0001�N�\"��=\u0000\u0000\u0000\u0000"
+  },
+  {
+    "user": "Admin",
+    "color": "#3498db",
+    "event": "ADD",
+    "file": "ground_grass_3264_4062_Small.jpg",
+    "xp": 420,
+    "lines": 2096,
+    "timestamp": "2026-03-05T10:08:45.260Z",
+    "diff": "����\u0000\u0010JFIF\u0000\u0001\u0001\u0000\u0000\u0001\u0000\u0001\u0000\u0000��\u0000\fNeoGeo\b\u0000\u0000Z��\u0000C\u0000\u0003\u0002\u0002\u0003\u0002\u0002\u0003\u0003\u0003\u0003\u0004\u0003\u0003\u0004\u0005\b\u0005\u0005\u0004\u0004\u0005\n\u0007\u0007\u0006\b\f\n\f\f\u000b\n\u000b\u000b\r\u000e\u0012\u0010\r\u000e\u0011\u000e\u000b\u000b\u0010\u0016\u0010\u0011\u0013\u0014\u0015\u0015\u0015\f\u000f\u0017\u0018\u0016\u0014\u0018\u0012\u0014\u0015\u0014��\u0000C\u0001\u0003\u0004\u0004\u0005\u0004\u0005\t\u0005\u0005\t\u0014\r\u000b\r\u0014\u0014\u0014\u0014\u0014\u0014\u0014\u0014\u0014\u0014\u0014\u0014\u0014\u0014\u0014\u0014\u0014\u0014\u0014\u0014\u0014\u0014\u0014\u0014\u0014\u0014\u0014\u0014\u0014\u0014\u0014\u0014\u0014\u0014\u0014\u0014\u0014\u0014\u0014\u0014\u0014\u0014\u0014\u0014\u0014\u0014\u0014\u0014\u0014\u0014��\u0000\u0011\b\u0003g\u0004�\u0003\u0001\"\u0000\u0002\u0011\u0001\u0003\u0011\u0001��\u0000\u001f\u0000\u0000\u0001\u0005\u0001\u0001\u0001\u0001\u0001\u0001\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b\t\n\u000b��\u0000�\u0010\u0000\u0002\u0001\u0003\u0003\u0002\u0004\u0003\u0005\u0005\u0004\u0004\u0000\u0000\u0001}\u0001\u0002\u0003\u0000\u0004\u0011\u0005\u0012!1A\u0006\u0013Qa\u0007\"q\u00142���\b#B��\u0015R��$3br�\t\n\u0016\u0017\u0018\u0019\u001a%&'()*456789:CDEFGHIJSTUVWXYZcdefghijstuvwxyz���������������������������������������������������������������������������\u0000\u001f\u0001\u0000\u0003\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0000\u0000\u0000\u0000\u0000\u0000\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b\t\n\u000b��\u0000�\u0011\u0000\u0002\u0001\u0002\u0004\u0004\u0003\u0004\u0007\u0005\u0004\u0004\u0000\u0001\u0002w\u0000\u0001\u0002\u0003\u0011\u0004\u0005!1\u0006\u0012AQ\u0007aq\u0013\"2�\b\u0014B����\t#3R�\u0015br�\n\u0016$4�%�\u0017\u0018\u0019\u001a&'()*56789:CDEFGHIJSTUVWXYZcdefghijstuvwxyz��������������������������������������������������������������������������\u0000\f\u0003\u0001\u0000\u0002\u0011\u0003\u0011\u0000?\u0000�4�K����t���\\l\u0018%�\u0012\u000e�y9TP\u0006s��S����7R[�����\u0002.���%�P�9\u0000\f3d��8�z�ԋ��\u001b��nnf�i/�A5�����,1�\u001b��q�I� `��q\\\u001e�\u0013�V�GkspRq\u0015������\u00196�˂�\u0016��z�1�Ҷ��l߳�WJ[�\u0000���h\\�W^'���\u001a�7VR\u0015��x�\u0006"
+  },
+  {
+    "user": "Admin",
+    "color": "#3498db",
+    "event": "ADD",
+    "file": "mount.blend1.blend",
+    "xp": 901,
+    "lines": 4503,
+    "timestamp": "2026-03-05T10:08:45.228Z",
+    "diff": "BLENDER_v270RENDH\u0000\u0000\u00000�\"\u0000\u0000\u0000\u0000\u0000\u0001\u0000\u0000\u0000\u0001\u0000\u0000\u0000�\u0000\u0000\u0000Scene\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000TEST\b\u0000\u0001\u0000�^\b\u0007\u0000\u0000\u0000\u0000\u0001\u0000\u0000\u0000�\u0000\u0000\u0000�\u0000\u0000\u0000\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�!!$�99?�FFM�FFM�FFM�FFM�FFM�FFM�FFM�FFM�FFM�FFM�FFM�FFM�FFM�::?�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�\u0015\u0015\u0017�"
+  },
+  {
+    "user": "Admin",
+    "color": "#3498db",
+    "event": "CHANGE",
+    "file": "public\\index.html",
+    "xp": 4,
+    "lines": 19,
+    "timestamp": "2026-03-05T10:08:12.022Z",
+    "diff": "<!DOCTYPE html>\r\n<html>\r\n<head>\r\n    <title>Primeval: GitHub Biome</title>\r\n    <style>\r\n        body { margin: 0; overflow: hidden; background: #02040a; font-family: 'Outfit', sans-serif; }\r\n        #hud { position: absolute; top: 30px; left: 30px; color: white; pointer-events: none; }\r\n        #count { color: #00ffcc; font-weight: bold; }\r\n    </style>\r\n</head>\r\n<body>\r\n    <div id=\"hud\">\r\n        <h1>@bhar1itr</h1>\r\n        <div id=\"count\">Connecting...</div>\r\n    </div>\r\n    <script type=\"importmap\"> { \"imports\": { \"three\": \"https://unpkg.com/three@0.160.0/build/three.module.js\", \"three/addons/\": \"https://unpkg.com/three@0.160.0/examples/jsm/\" } } </script>\r\n    <script type=\"module\" src=\"app.js\"></script>\r\n</body>\r\n</html>"
+  },
+  {
+    "user": "Admin",
+    "color": "#3498db",
+    "event": "CHANGE",
+    "file": "public\\app.js",
+    "xp": 1,
+    "lines": 1,
+    "timestamp": "2026-03-05T10:08:05.817Z",
+    "diff": ""
+  },
+  {
+    "user": "Admin",
+    "color": "#3498db",
+    "event": "CHANGE",
+    "file": "server.js",
+    "xp": 65,
+    "lines": 320,
+    "timestamp": "2026-03-05T10:07:56.309Z",
+    "diff": "// import express from \"express\";\r\n// import fs from \"fs/promises\";\r\n// import { existsSync, writeFileSync } from \"fs\";\r\n\r\n// const app = express();\r\n// const LOG_FILE = \".shadow-trace.json\";\r\n\r\n// if (!existsSync(LOG_FILE)) writeFileSync(LOG_FILE, JSON.stringify([]));\r\n\r\n// app.use(express.json());\r\n\r\n// app.post(\"/update\", async (req, res) => {\r\n//     try {\r\n//         const { user, xp, color } = req.body;\r\n//         if (!user || typeof user !== 'string') return res.status(400).send(\"Invalid User\");\r\n        \r\n//         const data = await fs.readFile(LOG_FILE, \"utf-8\");\r\n//         const logs = JSON.parse(data);\r\n\r\n//         const newEntry = {\r\n//             user: user.substring(0, 20),\r\n//             xp: Number(xp) || 0,\r\n//             color: /^#[0-9A-F]{6}$/i.test(color) ? color"
+  },
+  {
+    "user": "Admin",
+    "color": "#3498db",
+    "event": "CHANGE",
+    "file": "public\\app.js",
+    "xp": 17,
+    "lines": 80,
+    "timestamp": "2026-03-05T10:03:14.685Z",
+    "diff": "import * as THREE from \"three\";\r\nimport { OrbitControls } from \"three/addons/controls/OrbitControls.js\";\r\n\r\nconst scene = new THREE.Scene();\r\nscene.background = new THREE.Color(0x010206);\r\nscene.fog = new THREE.FogExp2(0x010206, 0.002);\r\n\r\nconst camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 1, 5000);\r\ncamera.position.set(400, 300, 600);\r\n\r\nconst renderer = new THREE.WebGLRenderer({ antialias: true });\r\nrenderer.setSize(window.innerWidth, window.innerHeight);\r\nrenderer.toneMapping = THREE.ACESFilmicToneMapping;\r\ndocument.body.appendChild(renderer.domElement);\r\n\r\nconst controls = new OrbitControls(camera, renderer.domElement);\r\ncontrols.enableDamping = true;\r\n\r\n// Lighting\r\nscene.add(new THREE.AmbientLight(0x404040, 2));\r\nconst sun = new THREE.PointLight(0x"
+  },
+  {
+    "user": "Admin",
+    "color": "#3498db",
+    "event": "CHANGE",
+    "file": "server.js",
+    "xp": 67,
+    "lines": 332,
+    "timestamp": "2026-03-05T10:03:07.670Z",
+    "diff": "// import express from \"express\";\r\n// import fs from \"fs/promises\";\r\n// import { existsSync, writeFileSync } from \"fs\";\r\n\r\n// const app = express();\r\n// const LOG_FILE = \".shadow-trace.json\";\r\n\r\n// if (!existsSync(LOG_FILE)) writeFileSync(LOG_FILE, JSON.stringify([]));\r\n\r\n// app.use(express.json());\r\n\r\n// app.post(\"/update\", async (req, res) => {\r\n//     try {\r\n//         const { user, xp, color } = req.body;\r\n//         if (!user || typeof user !== 'string') return res.status(400).send(\"Invalid User\");\r\n        \r\n//         const data = await fs.readFile(LOG_FILE, \"utf-8\");\r\n//         const logs = JSON.parse(data);\r\n\r\n//         const newEntry = {\r\n//             user: user.substring(0, 20),\r\n//             xp: Number(xp) || 0,\r\n//             color: /^#[0-9A-F]{6}$/i.test(color) ? color"
+  },
+  {
+    "user": "Admin",
+    "color": "#3498db",
+    "event": "CHANGE",
+    "file": "public\\index.html",
+    "xp": 16,
+    "lines": 77,
+    "timestamp": "2026-03-05T10:01:35.865Z",
+    "diff": "<!DOCTYPE html>\r\n<html lang=\"en\">\r\n\r\n<head>\r\n    <meta charset=\"UTF-8\">\r\n    <title>${GITHUB_USER} | Primeval 3D</title>\r\n    <link href=\"https://fonts.googleapis.com/css2?family=Outfit:wght@300;600&display=swap\" rel=\"stylesheet\">\r\n    <style>\r\n        body {\r\n            margin: 0;\r\n            background: #010206;\r\n            overflow: hidden;\r\n            font-family: 'Outfit', sans-serif;\r\n        }\r\n\r\n        #ui-layer {\r\n            position: absolute;\r\n            top: 0;\r\n            left: 0;\r\n            width: 100%;\r\n            height: 100%;\r\n            pointer-events: none;\r\n        }\r\n\r\n        .hud {\r\n            position: absolute;\r\n            top: 30px;\r\n            left: 30px;\r\n            background: rgba(255, 255, 255, 0.03);\r\n            border: 1px solid rgba(255, 2"
+  },
+  {
+    "user": "Admin",
+    "color": "#3498db",
+    "event": "CHANGE",
+    "file": "public\\app.js",
+    "xp": 16,
+    "lines": 76,
+    "timestamp": "2026-03-05T09:59:47.733Z",
+    "diff": "import * as THREE from \"three\";\r\nimport { OrbitControls } from \"three/addons/controls/OrbitControls.js\";\r\n\r\nconst scene = new THREE.Scene();\r\nscene.background = new THREE.Color(0x010206);\r\nscene.fog = new THREE.FogExp2(0x010206, 0.002);\r\n\r\nconst camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 1, 5000);\r\ncamera.position.set(400, 300, 600);\r\n\r\nconst renderer = new THREE.WebGLRenderer({ antialias: true });\r\nrenderer.setSize(window.innerWidth, window.innerHeight);\r\ndocument.body.appendChild(renderer.domElement);\r\n\r\nconst controls = new OrbitControls(camera, renderer.domElement);\r\ncontrols.enableDamping = true;\r\n\r\nscene.add(new THREE.AmbientLight(0x404040, 1.5));\r\nconst sun = new THREE.DirectionalLight(0xffffff, 1);\r\nsun.position.set(100, 500, 100);\r\nscene.add(s"
+  },
+  {
+    "user": "Admin",
+    "color": "#3498db",
+    "event": "CHANGE",
+    "file": "server.js",
+    "xp": 69,
+    "lines": 342,
+    "timestamp": "2026-03-05T09:59:41.869Z",
+    "diff": "// import express from \"express\";\r\n// import fs from \"fs/promises\";\r\n// import { existsSync, writeFileSync } from \"fs\";\r\n\r\n// const app = express();\r\n// const LOG_FILE = \".shadow-trace.json\";\r\n\r\n// if (!existsSync(LOG_FILE)) writeFileSync(LOG_FILE, JSON.stringify([]));\r\n\r\n// app.use(express.json());\r\n\r\n// app.post(\"/update\", async (req, res) => {\r\n//     try {\r\n//         const { user, xp, color } = req.body;\r\n//         if (!user || typeof user !== 'string') return res.status(400).send(\"Invalid User\");\r\n        \r\n//         const data = await fs.readFile(LOG_FILE, \"utf-8\");\r\n//         const logs = JSON.parse(data);\r\n\r\n//         const newEntry = {\r\n//             user: user.substring(0, 20),\r\n//             xp: Number(xp) || 0,\r\n//             color: /^#[0-9A-F]{6}$/i.test(color) ? color"
+  },
+  {
+    "user": "Admin",
+    "color": "#3498db",
+    "event": "CHANGE",
+    "file": "server.js",
+    "xp": 67,
+    "lines": 333,
+    "timestamp": "2026-03-05T09:59:07.498Z",
+    "diff": "// import express from \"express\";\r\n// import fs from \"fs/promises\";\r\n// import { existsSync, writeFileSync } from \"fs\";\r\n\r\n// const app = express();\r\n// const LOG_FILE = \".shadow-trace.json\";\r\n\r\n// if (!existsSync(LOG_FILE)) writeFileSync(LOG_FILE, JSON.stringify([]));\r\n\r\n// app.use(express.json());\r\n\r\n// app.post(\"/update\", async (req, res) => {\r\n//     try {\r\n//         const { user, xp, color } = req.body;\r\n//         if (!user || typeof user !== 'string') return res.status(400).send(\"Invalid User\");\r\n        \r\n//         const data = await fs.readFile(LOG_FILE, \"utf-8\");\r\n//         const logs = JSON.parse(data);\r\n\r\n//         const newEntry = {\r\n//             user: user.substring(0, 20),\r\n//             xp: Number(xp) || 0,\r\n//             color: /^#[0-9A-F]{6}$/i.test(color) ? color"
+  },
+  {
+    "user": "Admin",
+    "color": "#3498db",
+    "event": "CHANGE",
+    "file": "server.js",
+    "xp": 75,
+    "lines": 373,
+    "timestamp": "2026-03-05T09:59:06.212Z",
+    "diff": "// import express from \"express\";\r\n// import fs from \"fs/promises\";\r\n// import { existsSync, writeFileSync } from \"fs\";\r\n\r\n// const app = express();\r\n// const LOG_FILE = \".shadow-trace.json\";\r\n\r\n// if (!existsSync(LOG_FILE)) writeFileSync(LOG_FILE, JSON.stringify([]));\r\n\r\n// app.use(express.json());\r\n\r\n// app.post(\"/update\", async (req, res) => {\r\n//     try {\r\n//         const { user, xp, color } = req.body;\r\n//         if (!user || typeof user !== 'string') return res.status(400).send(\"Invalid User\");\r\n        \r\n//         const data = await fs.readFile(LOG_FILE, \"utf-8\");\r\n//         const logs = JSON.parse(data);\r\n\r\n//         const newEntry = {\r\n//             user: user.substring(0, 20),\r\n//             xp: Number(xp) || 0,\r\n//             color: /^#[0-9A-F]{6}$/i.test(color) ? color"
+  },
+  {
+    "user": "Admin",
+    "color": "#3498db",
+    "event": "CHANGE",
+    "file": "server.js",
+    "xp": 67,
+    "lines": 333,
+    "timestamp": "2026-03-05T09:58:55.916Z",
+    "diff": "// import express from \"express\";\r\n// import fs from \"fs/promises\";\r\n// import { existsSync, writeFileSync } from \"fs\";\r\n\r\n// const app = express();\r\n// const LOG_FILE = \".shadow-trace.json\";\r\n\r\n// if (!existsSync(LOG_FILE)) writeFileSync(LOG_FILE, JSON.stringify([]));\r\n\r\n// app.use(express.json());\r\n\r\n// app.post(\"/update\", async (req, res) => {\r\n//     try {\r\n//         const { user, xp, color } = req.body;\r\n//         if (!user || typeof user !== 'string') return res.status(400).send(\"Invalid User\");\r\n        \r\n//         const data = await fs.readFile(LOG_FILE, \"utf-8\");\r\n//         const logs = JSON.parse(data);\r\n\r\n//         const newEntry = {\r\n//             user: user.substring(0, 20),\r\n//             xp: Number(xp) || 0,\r\n//             color: /^#[0-9A-F]{6}$/i.test(color) ? color"
+  },
+  {
+    "user": "Admin",
+    "color": "#3498db",
+    "event": "CHANGE",
+    "file": "public\\app.js",
+    "xp": 16,
+    "lines": 75,
+    "timestamp": "2026-03-05T09:58:28.532Z",
+    "diff": "import * as THREE from \"three\";\r\nimport { OrbitControls } from \"three/addons/controls/OrbitControls.js\";\r\n\r\nconst scene = new THREE.Scene();\r\nscene.background = new THREE.Color(0x010206);\r\nscene.fog = new THREE.FogExp2(0x010206, 0.002);\r\n\r\nconst camera = new THREE.PerspectiveCamera(60, window.innerWidth/window.innerHeight, 1, 5000);\r\ncamera.position.set(400, 300, 600);\r\n\r\nconst renderer = new THREE.WebGLRenderer({ antialias: true });\r\nrenderer.setSize(window.innerWidth, window.innerHeight);\r\ndocument.body.appendChild(renderer.domElement);\r\n\r\nconst controls = new OrbitControls(camera, renderer.domElement);\r\ncontrols.enableDamping = true;\r\n\r\n// Lighting\r\nscene.add(new THREE.AmbientLight(0x404040, 1.5));\r\nconst sun = new THREE.DirectionalLight(0xffffff, 1);\r\nsun.position.set(100, 500, 100);\r\n"
+  },
+  {
+    "user": "Admin",
+    "color": "#3498db",
+    "event": "CHANGE",
+    "file": "server.js",
+    "xp": 65,
+    "lines": 320,
+    "timestamp": "2026-03-05T09:58:01.718Z",
+    "diff": "// import express from \"express\";\r\n// import fs from \"fs/promises\";\r\n// import { existsSync, writeFileSync } from \"fs\";\r\n\r\n// const app = express();\r\n// const LOG_FILE = \".shadow-trace.json\";\r\n\r\n// if (!existsSync(LOG_FILE)) writeFileSync(LOG_FILE, JSON.stringify([]));\r\n\r\n// app.use(express.json());\r\n\r\n// app.post(\"/update\", async (req, res) => {\r\n//     try {\r\n//         const { user, xp, color } = req.body;\r\n//         if (!user || typeof user !== 'string') return res.status(400).send(\"Invalid User\");\r\n        \r\n//         const data = await fs.readFile(LOG_FILE, \"utf-8\");\r\n//         const logs = JSON.parse(data);\r\n\r\n//         const newEntry = {\r\n//             user: user.substring(0, 20),\r\n//             xp: Number(xp) || 0,\r\n//             color: /^#[0-9A-F]{6}$/i.test(color) ? color"
+  },
+  {
+    "user": "Admin",
+    "color": "#3498db",
+    "event": "CHANGE",
+    "file": "server.js",
+    "xp": 64,
+    "lines": 319,
+    "timestamp": "2026-03-05T09:57:55.702Z",
+    "diff": "// import express from \"express\";\r\n// import fs from \"fs/promises\";\r\n// import { existsSync, writeFileSync } from \"fs\";\r\n\r\n// const app = express();\r\n// const LOG_FILE = \".shadow-trace.json\";\r\n\r\n// if (!existsSync(LOG_FILE)) writeFileSync(LOG_FILE, JSON.stringify([]));\r\n\r\n// app.use(express.json());\r\n\r\n// app.post(\"/update\", async (req, res) => {\r\n//     try {\r\n//         const { user, xp, color } = req.body;\r\n//         if (!user || typeof user !== 'string') return res.status(400).send(\"Invalid User\");\r\n        \r\n//         const data = await fs.readFile(LOG_FILE, \"utf-8\");\r\n//         const logs = JSON.parse(data);\r\n\r\n//         const newEntry = {\r\n//             user: user.substring(0, 20),\r\n//             xp: Number(xp) || 0,\r\n//             color: /^#[0-9A-F]{6}$/i.test(color) ? color"
+  },
+  {
+    "user": "Admin",
+    "color": "#3498db",
+    "event": "CHANGE",
+    "file": "server.js",
+    "xp": 65,
+    "lines": 321,
+    "timestamp": "2026-03-05T09:57:28.307Z",
+    "diff": "// import express from \"express\";\r\n// import fs from \"fs/promises\";\r\n// import { existsSync, writeFileSync } from \"fs\";\r\n\r\n// const app = express();\r\n// const LOG_FILE = \".shadow-trace.json\";\r\n\r\n// if (!existsSync(LOG_FILE)) writeFileSync(LOG_FILE, JSON.stringify([]));\r\n\r\n// app.use(express.json());\r\n\r\n// app.post(\"/update\", async (req, res) => {\r\n//     try {\r\n//         const { user, xp, color } = req.body;\r\n//         if (!user || typeof user !== 'string') return res.status(400).send(\"Invalid User\");\r\n        \r\n//         const data = await fs.readFile(LOG_FILE, \"utf-8\");\r\n//         const logs = JSON.parse(data);\r\n\r\n//         const newEntry = {\r\n//             user: user.substring(0, 20),\r\n//             xp: Number(xp) || 0,\r\n//             color: /^#[0-9A-F]{6}$/i.test(color) ? color"
+  },
+  {
+    "user": "Admin",
+    "color": "#3498db",
+    "event": "CHANGE",
+    "file": "public\\index.html",
+    "xp": 16,
+    "lines": 78,
+    "timestamp": "2026-03-05T09:56:32.995Z",
+    "diff": "<!DOCTYPE html>\r\n<html lang=\"en\">\r\n\r\n<head>\r\n    <meta charset=\"UTF-8\">\r\n    <title>${GITHUB_USER} | Primeval 3D</title>\r\n    <link href=\"https://fonts.googleapis.com/css2?family=Outfit:wght@300;600&display=swap\" rel=\"stylesheet\">\r\n    <style>\r\n        body {\r\n            margin: 0;\r\n            background: #010206;\r\n            overflow: hidden;\r\n            font-family: 'Outfit', sans-serif;\r\n        }\r\n\r\n        #ui-layer {\r\n            position: absolute;\r\n            top: 0;\r\n            left: 0;\r\n            width: 100%;\r\n            height: 100%;\r\n            pointer-events: none;\r\n        }\r\n\r\n        .hud {\r\n            position: absolute;\r\n            top: 30px;\r\n            left: 30px;\r\n            background: rgba(255, 255, 255, 0.03);\r\n            border: 1px solid rgba(255, 2"
+  },
+  {
+    "user": "Admin",
+    "color": "#3498db",
+    "event": "CHANGE",
+    "file": "public\\index.html",
+    "xp": 6,
+    "lines": 29,
+    "timestamp": "2026-03-05T09:56:30.247Z",
+    "diff": "<!DOCTYPE html>\r\n<html lang=\"en\">\r\n<head>\r\n    <meta charset=\"UTF-8\">\r\n    <title>${GITHUB_USER} | Primeval 3D</title>\r\n    <link href=\"https://fonts.googleapis.com/css2?family=Outfit:wght@300;600&display=swap\" rel=\"stylesheet\">\r\n    <style>\r\n        body { margin: 0; background: #010206; overflow: hidden; font-family: 'Outfit', sans-serif; }\r\n        #ui-layer { position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; }\r\n        .hud { position: absolute; top: 30px; left: 30px; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.1); padding: 25px; border-radius: 15px; backdrop-filter: blur(10px); color: white; }\r\n        .hud h1 { margin: 0; font-size: 24px; letter-spacing: 2px; }\r\n        .hud span { color: #00ffcc; font-size: 12px;"
+  },
+  {
+    "user": "Admin",
+    "color": "#3498db",
+    "event": "CHANGE",
+    "file": "server.js",
+    "xp": 65,
+    "lines": 320,
+    "timestamp": "2026-03-05T09:55:36.116Z",
+    "diff": "// import express from \"express\";\r\n// import fs from \"fs/promises\";\r\n// import { existsSync, writeFileSync } from \"fs\";\r\n\r\n// const app = express();\r\n// const LOG_FILE = \".shadow-trace.json\";\r\n\r\n// if (!existsSync(LOG_FILE)) writeFileSync(LOG_FILE, JSON.stringify([]));\r\n\r\n// app.use(express.json());\r\n\r\n// app.post(\"/update\", async (req, res) => {\r\n//     try {\r\n//         const { user, xp, color } = req.body;\r\n//         if (!user || typeof user !== 'string') return res.status(400).send(\"Invalid User\");\r\n        \r\n//         const data = await fs.readFile(LOG_FILE, \"utf-8\");\r\n//         const logs = JSON.parse(data);\r\n\r\n//         const newEntry = {\r\n//             user: user.substring(0, 20),\r\n//             xp: Number(xp) || 0,\r\n//             color: /^#[0-9A-F]{6}$/i.test(color) ? color"
+  },
+  {
+    "user": "Admin",
+    "color": "#3498db",
+    "event": "CHANGE",
+    "file": "server.js",
+    "xp": 65,
+    "lines": 320,
+    "timestamp": "2026-03-05T09:55:33.428Z",
+    "diff": "// import express from \"express\";\r\n// import fs from \"fs/promises\";\r\n// import { existsSync, writeFileSync } from \"fs\";\r\n\r\n// const app = express();\r\n// const LOG_FILE = \".shadow-trace.json\";\r\n\r\n// if (!existsSync(LOG_FILE)) writeFileSync(LOG_FILE, JSON.stringify([]));\r\n\r\n// app.use(express.json());\r\n\r\n// app.post(\"/update\", async (req, res) => {\r\n//     try {\r\n//         const { user, xp, color } = req.body;\r\n//         if (!user || typeof user !== 'string') return res.status(400).send(\"Invalid User\");\r\n        \r\n//         const data = await fs.readFile(LOG_FILE, \"utf-8\");\r\n//         const logs = JSON.parse(data);\r\n\r\n//         const newEntry = {\r\n//             user: user.substring(0, 20),\r\n//             xp: Number(xp) || 0,\r\n//             color: /^#[0-9A-F]{6}$/i.test(color) ? color"
+  },
+  {
+    "user": "Admin",
+    "color": "#3498db",
+    "event": "CHANGE",
+    "file": "public\\app.js",
+    "xp": 24,
+    "lines": 118,
+    "timestamp": "2026-03-05T09:53:43.144Z",
+    "diff": "import * as THREE from \"three\";\r\nimport { OrbitControls } from \"three/addons/controls/OrbitControls.js\";\r\n\r\nconst scene = new THREE.Scene();\r\nscene.fog = new THREE.FogExp2(0x010206, 0.003);\r\n\r\nconst camera = new THREE.PerspectiveCamera(60, window.innerWidth/window.innerHeight, 1, 5000);\r\ncamera.position.set(300, 250, 450);\r\n\r\nconst renderer = new THREE.WebGLRenderer({ antialias: true });\r\nrenderer.setSize(window.innerWidth, window.innerHeight);\r\nrenderer.setPixelRatio(window.devicePixelRatio);\r\nrenderer.toneMapping = THREE.ACESFilmicToneMapping;\r\ndocument.body.appendChild(renderer.domElement);\r\n\r\nconst controls = new OrbitControls(camera, renderer.domElement);\r\ncontrols.enableDamping = true;\r\n\r\n// Environment\r\nscene.add(new THREE.AmbientLight(0x404040, 1));\r\nconst sun = new THREE.Direction"
+  },
+  {
+    "user": "Admin",
+    "color": "#3498db",
+    "event": "ADD",
+    "file": "public\\app.js",
+    "xp": 1,
+    "lines": 1,
+    "timestamp": "2026-03-05T09:53:41.460Z",
+    "diff": ""
+  },
+  {
+    "user": "Admin",
+    "color": "#3498db",
+    "event": "CHANGE",
+    "file": "public\\index.html",
+    "xp": 6,
+    "lines": 28,
+    "timestamp": "2026-03-05T09:53:30.509Z",
+    "diff": "<!DOCTYPE html>\r\n<html lang=\"en\">\r\n<head>\r\n    <meta charset=\"UTF-8\">\r\n    <title>${GITHUB_USER} | Primeval 3D</title>\r\n    <link href=\"https://fonts.googleapis.com/css2?family=Outfit:wght@300;600&display=swap\" rel=\"stylesheet\">\r\n    <style>\r\n        body { margin: 0; background: #010206; overflow: hidden; font-family: 'Outfit', sans-serif; }\r\n        #ui-layer { position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; }\r\n        .hud { position: absolute; top: 30px; left: 30px; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.1); padding: 25px; border-radius: 15px; backdrop-filter: blur(10px); color: white; }\r\n        .hud h1 { margin: 0; font-size: 24px; letter-spacing: 2px; }\r\n        .hud span { color: #00ffcc; font-size: 12px;"
+  },
+  {
+    "user": "Admin",
+    "color": "#3498db",
+    "event": "ADD",
+    "file": "public\\index.html",
+    "xp": 1,
+    "lines": 1,
+    "timestamp": "2026-03-05T09:53:21.356Z",
+    "diff": ""
+  },
+  {
+    "user": "Admin",
+    "color": "#3498db",
+    "event": "CHANGE",
+    "file": "server.js",
+    "xp": 65,
+    "lines": 320,
+    "timestamp": "2026-03-05T09:53:07.025Z",
+    "diff": "// import express from \"express\";\r\n// import fs from \"fs/promises\";\r\n// import { existsSync, writeFileSync } from \"fs\";\r\n\r\n// const app = express();\r\n// const LOG_FILE = \".shadow-trace.json\";\r\n\r\n// if (!existsSync(LOG_FILE)) writeFileSync(LOG_FILE, JSON.stringify([]));\r\n\r\n// app.use(express.json());\r\n\r\n// app.post(\"/update\", async (req, res) => {\r\n//     try {\r\n//         const { user, xp, color } = req.body;\r\n//         if (!user || typeof user !== 'string') return res.status(400).send(\"Invalid User\");\r\n        \r\n//         const data = await fs.readFile(LOG_FILE, \"utf-8\");\r\n//         const logs = JSON.parse(data);\r\n\r\n//         const newEntry = {\r\n//             user: user.substring(0, 20),\r\n//             xp: Number(xp) || 0,\r\n//             color: /^#[0-9A-F]{6}$/i.test(color) ? color"
+  },
+  {
+    "user": "Admin",
+    "color": "#3498db",
+    "event": "CHANGE",
+    "file": "server.js",
+    "xp": 195,
+    "lines": 973,
+    "timestamp": "2026-03-05T09:52:22.393Z",
+    "diff": "// import express from \"express\";\r\n// import fs from \"fs/promises\";\r\n// import { existsSync, writeFileSync } from \"fs\";\r\n\r\n// const app = express();\r\n// const LOG_FILE = \".shadow-trace.json\";\r\n\r\n// if (!existsSync(LOG_FILE)) writeFileSync(LOG_FILE, JSON.stringify([]));\r\n\r\n// app.use(express.json());\r\n\r\n// app.post(\"/update\", async (req, res) => {\r\n//     try {\r\n//         const { user, xp, color } = req.body;\r\n//         if (!user || typeof user !== 'string') return res.status(400).send(\"Invalid User\");\r\n        \r\n//         const data = await fs.readFile(LOG_FILE, \"utf-8\");\r\n//         const logs = JSON.parse(data);\r\n\r\n//         const newEntry = {\r\n//             user: user.substring(0, 20),\r\n//             xp: Number(xp) || 0,\r\n//             color: /^#[0-9A-F]{6}$/i.test(color) ? color"
+  },
+  {
+    "user": "Admin",
+    "color": "#3498db",
+    "event": "CHANGE",
+    "file": "server.js",
+    "xp": 127,
+    "lines": 631,
+    "timestamp": "2026-03-05T09:51:35.341Z",
+    "diff": "// import express from \"express\";\r\n// import fs from \"fs/promises\";\r\n// import { existsSync, writeFileSync } from \"fs\";\r\n\r\n// const app = express();\r\n// const LOG_FILE = \".shadow-trace.json\";\r\n\r\n// if (!existsSync(LOG_FILE)) writeFileSync(LOG_FILE, JSON.stringify([]));\r\n\r\n// app.use(express.json());\r\n\r\n// app.post(\"/update\", async (req, res) => {\r\n//     try {\r\n//         const { user, xp, color } = req.body;\r\n//         if (!user || typeof user !== 'string') return res.status(400).send(\"Invalid User\");\r\n        \r\n//         const data = await fs.readFile(LOG_FILE, \"utf-8\");\r\n//         const logs = JSON.parse(data);\r\n\r\n//         const newEntry = {\r\n//             user: user.substring(0, 20),\r\n//             xp: Number(xp) || 0,\r\n//             color: /^#[0-9A-F]{6}$/i.test(color) ? color"
+  },
+  {
+    "user": "Admin",
+    "color": "#3498db",
+    "event": "CHANGE",
     "file": "server.js",
     "xp": 107,
     "lines": 530,

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Primeval 3D | @bhar1itr</title>
+    <style>
+        body { margin: 0; overflow: hidden; background: #111; font-family: sans-serif; }
+        #hud { position: absolute; top: 20px; left: 20px; color: white; pointer-events: none; z-index: 100; }
+        #count { color: #00ffcc; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div id="hud">
+        <h1>@bhar1itr</h1>
+        <div id="count">Connecting to GitHub...</div>
+    </div>
+    <script type="importmap">
+    {
+        "imports": {
+            "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+            "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+        }
+    }
+    </script>
+    <script type="module" src="app.js"></script>
+</body>
+</html>

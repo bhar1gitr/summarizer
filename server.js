@@ -284,247 +284,57 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 import express from "express";
 import axios from "axios";
+import path from "path";
+import { fileURLToPath } from "url";
 
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const app = express();
 const PORT = 3000;
-const GITHUB_USER = "bhar1itr";
+const GITHUB_USER = "bhar1itr"; 
 
-app.get("/", async (req, res) => {
+app.use(express.static("public"));
 
+app.get("/api/repos", async (req, res) => {
     let allRepos = [];
     let page = 1;
-
     try {
-
-        console.log("Fetching repos...");
-
         while (true) {
-
-            const response = await axios.get(
-                `https://api.github.com/users/${GITHUB_USER}/repos`,
-                {
-                    params: {
-                        per_page: 100,
-                        page: page
-                    },
-                    headers: {
-                        "User-Agent": "Github-Forest-App",
-                        "Accept": "application/vnd.github+json"
-                    }
-                }
-            );
-
+            const response = await axios.get(`https://api.github.com/users/${GITHUB_USER}/repos`, {
+                params: { per_page: 100, page: page },
+                headers: { "User-Agent": "Github-Forest-Game" }
+            });
             if (response.data.length === 0) break;
-
-            allRepos = [...allRepos, ...response.data];
-
+            allRepos = allRepos.concat(response.data);
             page++;
-
-            if (page > 5) break; // safety
         }
-
-        console.log("Total repos:", allRepos.length);
-
-    } catch (err) {
-
-        console.log("GitHub Error:", err.message);
-
+        res.json(allRepos.map(repo => ({
+            name: repo.name,
+            stars: repo.stargazers_count,
+            size: repo.size,
+            url: repo.html_url,
+            isGolden: repo.stargazers_count > 10 
+        })));
+    } catch (e) {
+        res.status(500).json({ error: e.message });
     }
-
-    const repos = allRepos.map(repo => ({
-        name: repo.name,
-        stars: repo.stargazers_count,
-        size: repo.size,
-        url: repo.html_url,
-        lang: repo.language || "Other",
-        isGolden: repo.stargazers_count > 10
-    }));
-
-    const html = `
-<!DOCTYPE html>
-<html>
-<head>
-
-<title>GitHub Forest</title>
-
-<style>
-
-body{
-margin:0;
-background:#02040a;
-overflow:hidden;
-font-family:sans-serif;
-}
-
-#overlay{
-position:absolute;
-top:20px;
-left:20px;
-color:white;
-}
-
-</style>
-
-</head>
-
-<body>
-
-<div id="overlay">
-
-<h1>${GITHUB_USER}</h1>
-<div>${repos.length} REPOS</div>
-
-</div>
-
-<script type="importmap">
-{
-"imports":{
-"three":"https://unpkg.com/three@0.160.0/build/three.module.js",
-"three/addons/":"https://unpkg.com/three@0.160.0/examples/jsm/"
-}
-}
-</script>
-
-<script type="module">
-
-import * as THREE from 'three'
-import {OrbitControls} from 'three/addons/controls/OrbitControls.js'
-
-const repos = ${JSON.stringify(repos)}
-
-const scene = new THREE.Scene()
-
-const camera = new THREE.PerspectiveCamera(
-60,
-window.innerWidth/window.innerHeight,
-1,
-3000
-)
-
-camera.position.set(200,150,400)
-
-const renderer = new THREE.WebGLRenderer({antialias:true})
-
-renderer.setSize(window.innerWidth,window.innerHeight)
-
-document.body.appendChild(renderer.domElement)
-
-const controls = new OrbitControls(camera,renderer.domElement)
-
-scene.add(new THREE.AmbientLight(0xffffff,0.6))
-
-const light = new THREE.DirectionalLight(0xffffff,1)
-
-light.position.set(100,200,100)
-
-scene.add(light)
-
-repos.forEach((repo,i)=>{
-
-const group = new THREE.Group()
-
-const angle = i * 0.3
-
-const radius = 60 + i*6
-
-group.position.set(
-Math.cos(angle)*radius,
-0,
-Math.sin(angle)*radius
-)
-
-const height = 10 + Math.sqrt(repo.size)
-
-const trunk = new THREE.Mesh(
-
-new THREE.CylinderGeometry(1,2,height,8),
-
-new THREE.MeshStandardMaterial({
-color: repo.isGolden ? 0xffd700 : 0x333333
-})
-
-)
-
-trunk.position.y = height/2
-
-group.add(trunk)
-
-const leaves = new THREE.Mesh(
-
-new THREE.SphereGeometry(height/2,8,8),
-
-new THREE.MeshStandardMaterial({
-color: repo.isGolden ? 0xffffff : 0x00ffcc,
-wireframe:true
-})
-
-)
-
-leaves.position.y = height
-
-group.add(leaves)
-
-group.userData = {url:repo.url}
-
-scene.add(group)
-
-})
-
-window.addEventListener("click",(e)=>{
-
-const mouse = new THREE.Vector2(
-
-(e.clientX/window.innerWidth)*2-1,
--(e.clientY/window.innerHeight)*2+1
-
-)
-
-const raycaster = new THREE.Raycaster()
-
-raycaster.setFromCamera(mouse,camera)
-
-const hits = raycaster.intersectObjects(scene.children,true)
-
-if(hits.length>0){
-
-const parent = hits[0].object.parent
-
-if(parent.userData.url){
-
-window.open(parent.userData.url)
-
-}
-
-}
-
-})
-
-function animate(){
-
-requestAnimationFrame(animate)
-
-controls.update()
-
-renderer.render(scene,camera)
-
-}
-
-animate()
-
-</script>
-
-</body>
-</html>
-`;
-
-    res.send(html);
-
 });
 
-app.listen(PORT, () => {
-
-console.log("Server running on http://localhost:3000")
-
-});
+app.get("/", (req, res) => res.sendFile(path.join(__dirname, "public/index.html")));
+app.listen(PORT, () => console.log(`🎮 Game Server: http://localhost:${PORT}`));
